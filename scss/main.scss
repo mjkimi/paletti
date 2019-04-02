@@ -1,17 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600');
-
-$bckgrd-color: #fff;
-$primary-color: #555;
-$secondary-color: #c40d2e;
-$gray-border-color: #e2e2e2;
-$border: 1px solid $gray-border-color;
-
-@mixin easeOut {
-  transition: all 0.5s ease-in-out;
-}
-@mixin easeOutQuick {
-  transition: all 0.2s ease-in;
-}
+@import 'config';
+@import 'signin';
+@import 'menu';
 
 * {
   box-sizing: border-box;
@@ -47,15 +37,9 @@ ul {
   padding: 0;
   font-size: 1rem;
   text-transform: uppercase;
-  /* opacity: 0.7; */
 }
 
-// .page-header {
-//   position: relative;
-//   z-index: 1000;
-//   background: red;
-// }
-
+// Header
 .header-wrapper {
   width: 100%;
   position: fixed;
@@ -72,7 +56,6 @@ ul {
   margin: 0 auto;
   position: relative;
   z-index: 1000;
-  // background: #fff;
   &.close {
     z-index: 800;
   }
@@ -82,7 +65,6 @@ ul {
     line-height: 60px;
     height: 60px;
     @include easeOut();
-    /* opacity: 0.8; */
     &:hover {
       color: $secondary-color;
     }
@@ -108,7 +90,6 @@ ul {
   .header-menu-right {
     height: 60px;
     float: right;
-
     ul li.header-menu-item {
       display: inline-block;
       height: 60px;
@@ -116,300 +97,10 @@ ul {
     }
   }
 }
-
-.side-menu {
-  z-index: 900;
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 250px;
-  background: $bckgrd-color;
-  transform: translate3d(-100%, 0, 0);
-  @include easeOut();
-  // visibility: hidden;
-  &.show {
-    // visibility: visible;
-    transform: translate3d(0, 0, 0);
-  }
-  .btn-close {
-    // position: relative;
-    display: block;
-    width: 100%;
-    line-height: 60px;
-    height: 60px;
-    text-align: center;
-    border-right: $border;
-    border-bottom: $border;
-    color: $secondary-color;
-    box-shadow: 0 8px 20px -6px $gray-border-color;
-    transform: rotate(0);
-    &:hover span.btn-close-x {
-      // color: green;
-      transform: rotate(90deg);
-    }
-  }
-  .btn-close-x {
-    font-size: 25px;
-    position: absolute;
-    left: 65px;
-    top: 17px;
-    line-height: 1;
-    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: rotate(0);
-    transform-origin: 50% 14px;
-  }
-
-  .menu {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    height: 100%;
-    width: 100%;
-
-    &-nav {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      .nav-item {
-        text-align: center;
-        width: 80%;
-        margin: 0 auto;
-        border-bottom: $border;
-        .nav-link {
-          display: block;
-          position: relative;
-          // font-size: 30px;
-          text-transform: uppercase;
-          padding: 1.5rem 0;
-          @include easeOutQuick();
-          &:hover {
-            color: $secondary-color;
-          }
-          .menu-icons {
-            display: block;
-            margin-bottom: 1rem;
-            opacity: 0.5;
-          }
-        }
-      }
-    }
-  }
-}
-
-.dark-overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 850;
-  width: 0;
-  height: 100vh;
-  background: #000;
-  opacity: 0;
-  // visibility: visible;
-  transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  &.show {
-    width: 100vw;
-    opacity: 0.4;
-    transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  }
-}
-
-.header-menu-btn {
-  display: block;
-  height: 60px;
-  text-align: center;
-  padding: 10px 6px;
-  @include easeOut();
-  &:hover {
-    color: $secondary-color;
-  }
-}
-
-// Account forms on hover
-.header-menu-dialog {
-  position: absolute;
-  right: 50%;
-  top: 60px;
-  overflow: hidden;
-  border: $border;
-  border-radius: 5px;
-  box-shadow: 0 0 20px $gray-border-color;
-  margin-right: -2rem;
-  /* opacity: 0; */
-  /* visibility: hidden; */
-
-  .header-authentication {
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-/* Sign In */
-.signin {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  padding: 2rem 0;
-
-  form {
-    width: 100%;
-    padding-bottom: 1rem;
-  }
-
-  h2 {
-    display: block;
-    text-transform: uppercase;
-    font-size: 16px;
-    margin: 0 0 1rem;
-    text-align: center;
-  }
-
-  .email-field,
-  .password-field {
-    position: relative;
-    width: 100%;
-    z-index: 3;
-    .text-input {
-      display: block;
-      margin-bottom: 1.3rem;
-      width: 100%;
-      border-radius: 2px;
-      border: $border;
-      background: #fbfbfb;
-      color: $primary-color;
-      padding: 0.5rem 1rem;
-      line-height: 1.3rem;
-      &:focus + label.placeholder,
-      &[data-state='not-empty'] + label.placeholder {
-        top: -5px;
-        padding: 0 3px;
-        display: block;
-        background: $bckgrd-color;
-        font-size: 11px;
-        line-height: 1;
-        white-space: nowrap;
-        @include easeOutQuick();
-      }
-    }
-    label.placeholder {
-      display: block;
-      position: absolute;
-      left: 20px;
-      top: 3px;
-      font-size: 14px;
-      line-height: 2rem;
-      font-weight: 400;
-    }
-  }
-
-  .error-msg {
-    color: $secondary-color;
-    font-weight: 600;
-    font-size: 13px;
-    border-color: $secondary-color !important;
-  }
-
-  .primary-btn {
-    margin: 1.5rem 0 0;
-    width: 100%;
-  }
-
-  // .secondary-btn,
-  // .links
-  .or {
-    width: 60%;
-    margin-top: 1rem;
-  }
-
-  .link {
-    width: 100%;
-    text-align: left;
-    a {
-      text-decoration: underline;
-      margin-bottom: 1rem;
-      font-size: 0.7rem;
-      font-weight: 400;
-      @include easeOut();
-      &:hover {
-        color: $secondary-color;
-      }
-    }
-  }
-
-  .or {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 1rem;
-    align-items: center;
-
-    .bar {
-      flex: auto;
-      border: none;
-      height: 1px;
-      background: rgb(196, 190, 190);
-    }
-
-    span {
-      // color: #ccc;
-      padding: 0 0.8rem;
-    }
-  }
-  p {
-    text-align: center;
-    margin: 0 0.5rem 0.5rem;
-    font-size: 13px;
-    span {
-      color: $secondary-color;
-      display: inline-block;
-      transform: rotate(90deg) translateX(5px);
-      @include easeOutQuick();
-      &:hover {
-        color: $primary-color;
-      }
-    }
-  }
-}
-
-/* Button */
-.primary-btn {
-  padding: 0.7rem 1rem;
-  height: 2.7rem;
-  display: block;
-  border: 0;
-  border-radius: 2px;
-  font-weight: 500;
-  background: #f96816;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  @include easeOut();
-  &:hover {
-    background-color: #ff7b39;
-  }
-}
-
-.secondary-btn {
-  padding: 0.7rem 3rem;
-  height: 2.7rem;
-  display: block;
-  border: 1px solid #000;
-  border-radius: 2px;
-  font-weight: 500;
-  background: none;
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  @include easeOut();
-  &:hover {
-    border-color: #ff7b39;
-    color: #ff7b39;
-  }
-}
+// .my:hover .header-menu-dialog  {
+//   visibility: visible;
+//   .signin {
+//     transform: translate3d(0, 0, 0);
+//     opacity: 1;
+//   }
+// }

@@ -1,0 +1,196 @@
+// Sign in form
+.wer {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+.header-menu-dialog {
+  position: absolute;
+  right: 50%;
+  top: 60px;
+  overflow: hidden;
+  border: $border;
+  border-radius: 5px;
+  box-shadow: 0 0 20px $gray-border-color;
+  margin-right: -2rem;
+  visibility: hidden;
+
+  .header-authentication {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Sign In */
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 2rem 0;
+  transform: translate3d(0, 5%, 0);
+  opacity: 0;
+  @include easeOut();
+  .wer {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0);
+  }
+  form {
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  h2 {
+    display: block;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0 0 1rem;
+    text-align: center;
+  }
+
+  .email-field,
+  .password-field {
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    .text-input {
+      display: block;
+      margin-bottom: 1.3rem;
+      width: 100%;
+      border-radius: 2px;
+      border: $border;
+      background: #f4f4f4;
+      color: $primary-color;
+      padding: 0.5rem 1rem;
+      line-height: 1.3rem;
+      &:focus + label.placeholder,
+      &[data-state='not-empty'] + label.placeholder {
+        top: -5px;
+        padding: 0 3px;
+        display: block;
+        background: $bckgrd-color;
+        font-size: 11px;
+        line-height: 1;
+        white-space: nowrap;
+        @include easeOutQuick();
+      }
+    }
+    label.placeholder {
+      display: block;
+      position: absolute;
+      left: 20px;
+      top: 3px;
+      font-size: 14px;
+      line-height: 2rem;
+      font-weight: 400;
+    }
+  }
+
+  .error-msg {
+    color: $secondary-color;
+    font-weight: 600;
+    font-size: 13px;
+    border-color: $secondary-color !important;
+  }
+
+  .primary-btn {
+    margin: 1.5rem 0 0;
+    width: 100%;
+  }
+
+  .or {
+    width: 60%;
+    margin-top: 1rem;
+  }
+
+  .link {
+    width: 100%;
+    text-align: left;
+    a {
+      text-decoration: underline;
+      margin-bottom: 1rem;
+      font-size: 0.7rem;
+      font-weight: 400;
+      @include easeOut();
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  .or {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    align-items: center;
+
+    .bar {
+      flex: auto;
+      border: none;
+      height: 1px;
+      background: rgb(196, 190, 190);
+    }
+
+    span {
+      padding: 0 0.8rem;
+    }
+  }
+  p {
+    text-align: center;
+    margin: 0 0.5rem 0.5rem;
+    font-size: 13px;
+    span {
+      color: $secondary-color;
+      display: inline-block;
+      transform: rotate(90deg) translateX(5px);
+      @include easeOutQuick();
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+/* Button */
+.primary-btn {
+  // @extend .btn;
+  padding: 0.7rem 1rem;
+  height: 2.7rem;
+  display: block;
+  border: 0;
+  border-radius: 2px;
+  font-weight: 500;
+  background: #f96816;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  @include easeOut();
+  &:hover {
+    background-color: #ff7b39;
+  }
+}
+
+.secondary-btn {
+  // @extend .btn;
+  padding: 0.7rem 3rem;
+  height: 2.7rem;
+  display: block;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-weight: 500;
+  background: none;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  @include easeOut();
+  &:hover {
+    border-color: #ff7b39;
+    color: #ff7b39;
+  }
+}

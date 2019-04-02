@@ -2,17 +2,42 @@
 
 const inputs = document.querySelectorAll('.text-input');
 
+// let active = false;
 inputs.forEach(input => {
   input.addEventListener('input', () => {
     const value = input.value.trim();
     // if typed:
     if (value) {
       input.dataset.state = 'not-empty';
+      // form.dataset.state = 'show';
+      // menuDialog.dataset.state = 'show';
     } else {
-      input.dataset.state = 'empty';
+      input.dataset.state = '';
     }
   });
 });
+
+const my = document.querySelector('.my');
+my.addEventListener('mouseover', showForm);
+let active = false;
+function showForm() {
+  const form = document.querySelector('.signin');
+  const menuDialog = document.querySelector('.header-menu-dialog');
+  console.log('hi');
+  if (!active) {
+    form.className += ' ' + 'wer';
+    // form.style.opacity = '1';
+    // menuDialog.style.visibility = 'visible';
+    menuDialog.className += ' ' + 'wer';
+    active = true;
+  } else {
+    form.classList.remove('wer');
+    // form.style.opacity = '1';
+    // menuDialog.style.visibility = 'visible';
+    menuDialog.classList.remove('wer');
+    active = false;
+  }
+}
 
 // Sign In -> Submit
 document.querySelector('#sign-in-form').addEventListener('submit', e => {
