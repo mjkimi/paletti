@@ -89,24 +89,29 @@ const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
 const controlBtn = document.querySelector('#control');
 let autoplay = true;
-let intervalTime = 3000;
+let intervalTime = 4000;
 let slideInterval;
+
+window.onload = () => {
+  document.querySelector('.slide').classList.add('current');
+};
 
 const nextSlide = () => {
   const current = document.querySelector('.current');
   current.classList.remove('current');
   // check for the next slide and pass on current class
+  document.querySelector('.slider').style.background = '#404040';
   if (current.nextElementSibling) {
     current.nextElementSibling.classList.add('current');
   } else {
     // back to the 1st slide
     slides[0].classList.add('current');
   }
-  setTimeout(() => current.classList.remove('current'), 200);
 };
 
 const prevSlide = () => {
   const current = document.querySelector('.current');
+  current.classList.add('fade');
   current.classList.remove('current');
   // check for the prev slide and pass on current class
   if (current.previousElementSibling) {
@@ -114,16 +119,19 @@ const prevSlide = () => {
   } else {
     slides[slides.length - 1].classList.add('current');
   }
-  setTimeout(() => current.classList.remove('current'), 200);
 };
 
 next.addEventListener('click', e => {
   nextSlide();
-  resetTime();
+  if (autoplay) {
+    resetTime();
+  }
 });
 prev.addEventListener('click', e => {
   prevSlide();
-  resetTime();
+  if (autoplay) {
+    resetTime();
+  }
 });
 
 function resetTime() {
@@ -137,12 +145,14 @@ if (autoplay) {
 }
 // Play/pause slide show
 controlBtn.addEventListener('click', e => {
+  const icon = controlBtn.firstElementChild;
   if (autoplay) {
     autoplay = false;
     clearInterval(slideInterval);
+    icon.setAttribute('class', 'far fa-caret-square-right');
   } else {
     autoplay = true;
     slideInterval = setInterval(nextSlide, intervalTime);
+    icon.setAttribute('class', 'far fa-pause-circle');
   }
 });
-
