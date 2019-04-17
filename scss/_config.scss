@@ -3,6 +3,7 @@ $primary-color: #555;
 $secondary-color: #c40d2e;
 $gray-border-color: #e2e2e2;
 $border: 1px solid $gray-border-color;
+$cubic-bezier: cubic-bezier(0.19, 1, 0.22, 1);
 
 @mixin easeOut {
   transition: all 0.5s ease-in-out;

@@ -2,41 +2,38 @@
 
 const inputs = document.querySelectorAll('.text-input');
 
-// let active = false;
 inputs.forEach(input => {
   input.addEventListener('input', () => {
     const value = input.value.trim();
     // if typed:
     if (value) {
       input.dataset.state = 'not-empty';
-      // form.dataset.state = 'show';
-      // menuDialog.dataset.state = 'show';
     } else {
       input.dataset.state = '';
     }
   });
 });
 
-const my = document.querySelector('.my');
-my.addEventListener('mouseover', showForm);
-let active = false;
-function showForm() {
-  const form = document.querySelector('.signin');
-  const menuDialog = document.querySelector('.header-menu-dialog');
-  if (!active) {
-    form.className += ' ' + 'wer';
-    // form.style.opacity = '1';
-    // menuDialog.style.visibility = 'visible';
-    menuDialog.className += ' ' + 'wer';
-    active = true;
-  } else {
-    form.classList.remove('wer');
-    // form.style.opacity = '1';
-    // menuDialog.style.visibility = 'visible';
-    menuDialog.classList.remove('wer');
-    active = false;
-  }
-}
+// const my = document.querySelector('.my');
+// my.addEventListener('mouseover', showForm);
+// let active = false;
+// function showForm() {
+//   const form = document.querySelector('.signin');
+//   const menuDialog = document.querySelector('.header-menu-dialog');
+//   if (!active) {
+//     form.className += ' ' + 'wer';
+//     // form.style.opacity = '1';
+//     // menuDialog.style.visibility = 'visible';
+//     menuDialog.className += ' ' + 'wer';
+//     active = true;
+//   } else {
+//     form.classList.remove('wer');
+//     // form.style.opacity = '1';
+//     // menuDialog.style.visibility = 'visible';
+//     menuDialog.classList.remove('wer');
+//     active = false;
+//   }
+// }
 
 // Sign In -> Submit
 document.querySelector('#sign-in-form').addEventListener('submit', e => {
@@ -69,6 +66,7 @@ menuBtn.addEventListener('click', toggleMenu);
 // initial state:
 // let showMenu = false;
 function toggleMenu() {
+  closeBtn.classList.remove('closed');
   sideMenu.classList.add('show');
   dark.classList.add('show');
   header.classList.add('close');
@@ -76,6 +74,7 @@ function toggleMenu() {
 
 closeBtn.addEventListener('click', closeMenu);
 function closeMenu() {
+  closeBtn.classList.add('closed');
   dark.classList.remove('show');
   sideMenu.classList.remove('show');
 
@@ -88,8 +87,9 @@ const slides = document.querySelectorAll('.slide');
 const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
 const controlBtn = document.querySelector('#control');
+const container = document.querySelectorAll('.container');
 let autoplay = true;
-let intervalTime = 4000;
+let intervalTime = 5000;
 let slideInterval;
 
 window.onload = () => {
@@ -99,8 +99,8 @@ window.onload = () => {
 const nextSlide = () => {
   const current = document.querySelector('.current');
   current.classList.remove('current');
+  document.querySelector('.slider').classList.add('dark-bg');
   // check for the next slide and pass on current class
-  document.querySelector('.slider').style.background = '#404040';
   if (current.nextElementSibling) {
     current.nextElementSibling.classList.add('current');
   } else {

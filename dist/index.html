@@ -28,11 +28,12 @@
                   class="btn header-menu-btn"
                   type="button"
                 >
-                  <span class="">Search</span>
+                  <i class="fas fa-search"></i>
+                  <span>Search</span>
                 </button>
               </li>
               <li class="header-menu-item my">
-                <a href="#">
+                <a href="#" class="btn">
                   <span>My Omega</span>
                 </a>
 
@@ -48,8 +49,9 @@
                           <div class="password-field">
                             <input type="password" id="password" class="text-input empty" data-validate="{required:true}" autocomplete="off"/>
                             <label for="password" class="placeholder"> Password <span class="aster">*</span></label>
+                            <div class="error-msg" id="error-msg"></div>
                           </div>
-                          <div class="error-msg" id="error-msg"></div>
+                          
                           <div class="link">
                               <a href="#">Forgot Your Password?</a>
                             </div>
@@ -68,10 +70,11 @@
             </ul>
           </div>
         </div>
+        <!-- Main menu -->
         <div class="side-menu">
           <button class="btn btn-close" id="btn-close">
-            <span class="btn-close-x">&times;</span>
-            <span>Close</span>
+            <span class="btn-close-x"><span></span></span>
+            Close
           </button>
           <nav class="menu">
               <ul class="menu-nav">
@@ -109,26 +112,26 @@
     <main>
       <!-- Slider -->
       <div class="slider-wrapper">
-      <div class="slider">
-        <div class="slide ">
-          <div class="content">
-            <h1>Slide One</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-            nostrum laborum corrupti sit deleniti ad?
-          </p>
+        <div class="slider">
+          <div class="slide ">
+            <img src="./img/img5.jpg" alt=""  class="main-slide">
+            <div class="side-module">
+              <img src="./img/Chocolate/Hazelnut1.png" alt="">
+              <h2>Shop Fazer products online</h2>
+              <button type="button" class="btn buy-now">Buy now</button>
+            </div>
           </div>
-        </div>
-        <div class="slide">
-          <div class="content">
-            <h1>Slide One</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-            nostrum laborum corrupti sit deleniti ad?
-          </p>
+
+          <div class="slide">
+            <img src="./img/img6.jpg" alt="" class="main-slide">
+            <div class="side-module">
+              <img src="./img/Chocolate/Hazelnut1.png" alt="">
+              <h2>Shop Fazer products online</h2>
+              <button type="button" class="btn buy-now">Buy now</button>
+            </div>
           </div>
-        </div>
-      </div>
+        </div> 
+
       <div class="buttons">
         <button id="control" type="button"><i class="far fa-pause-circle"></i></button>
           <button id="prev" type="button"><i class="fas fa-angle-double-left"></i></button>
