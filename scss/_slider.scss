@@ -22,7 +22,7 @@
   justify-content: center;
   > img.main-slide {
     position: relative;
-    max-width: 100%;
+    width: 100%;
     opacity: 0;
     transform: scale(1.15);
     transition: transform 3s $cubic-bezier, opacity 1s ease;
@@ -47,10 +47,6 @@
   img {
     max-height: 350px;
   }
-  .buy-now {
-    width: 80%;
-    line-height: 3;
-  }
 }
 
 .slider .current {
@@ -66,7 +62,7 @@
   }
 }
 
-.buttons {
+.slider-control {
   position: absolute;
   z-index: 1;
   margin-left: auto;
@@ -75,22 +71,40 @@
   left: 0;
   right: 0;
   text-align: center;
-  #control {
+  .arrow #control {
     position: absolute;
     bottom: 0;
     left: calc(50vw - 80px);
   }
 }
 
-.buttons button {
+.arrow {
   background: transparent;
   border: none;
-  color: red;
+  color: $primary-color;
   cursor: pointer;
   padding: 10px;
   font-size: 1rem;
   @include easeOut();
   &:hover {
-    color: $bckgrd-color;
+    color: $secondary-color;
+  }
+}
+
+.section-scroll {
+  display: block;
+  width: 100%;
+  height: 80px;
+  position: relative;
+  i {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    font-size: 1.2rem;
+    transform: translate3d(0, 0, 0);
+    transition: transform 1s $cubic-bezier;
+  }
+  &:hover i {
+    transform: translate3d(0, 16px, 0);
   }
 }

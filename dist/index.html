@@ -9,6 +9,7 @@
     <title>Document</title>
   </head>
   <body>
+  <div class="container">
     <header class="page-header">
       <div class="header-wrapper">
         <div class="header-sticky">
@@ -79,13 +80,13 @@
           <nav class="menu">
               <ul class="menu-nav">
                 <li class="nav-item"> 
-                  <a href="#" class="nav-link">
+                  <a href="#main" class="nav-link">
                       <i class="fas fa-key fa-lg menu-icons"></i>
                       The collection
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="#shop" class="nav-link">
                     <i class="fas fa-globe fa-lg menu-icons"></i>
                     Planet
                   </a>
@@ -106,39 +107,76 @@
           </nav>
         </div>
         <div class="dark-overlay"></div>
-        <!--  -->
       </nav>
     </header>
     <main>
-      <!-- Slider -->
-      <div class="slider-wrapper">
-        <div class="slider">
-          <div class="slide ">
-            <img src="./img/img5.jpg" alt=""  class="main-slide">
-            <div class="side-module">
-              <img src="./img/Chocolate/Hazelnut1.png" alt="">
-              <h2>Shop Fazer products online</h2>
-              <button type="button" class="btn btn-action buy-now">Buy now</button>
+      <!-- Slider// -->
+      <section id="main">
+        <div class="slider-wrapper">
+          <div class="slider">
+            <div class="slide ">
+              <img src="./img/img5.jpg" alt=""  class="main-slide">
+              <div class="side-module">
+                <img src="./img/Chocolate/Hazelnut1.png" alt="">
+                <h2>Shop Fazer products online</h2>
+                <button type="button" class="btn btn-action buy-now">Buy now</button>
+              </div>
             </div>
-          </div>
 
-          <div class="slide">
-            <img src="./img/img6.jpg" alt="" class="main-slide">
-            <div class="side-module">
-              <img src="./img/Chocolate/Hazelnut1.png" alt="">
-              <h2>Shop Fazer products online</h2>
-              <button type="button" class="btn btn-action buy-now">Buy now</button>
+            <div class="slide">
+              <img src="./img/img6.jpg" alt="" class="main-slide">
+              <div class="side-module">
+                <img src="./img/Chocolate/Hazelnut1.png" alt="">
+                <h2>Shop Fazer products online</h2>
+                <button type="button" class="btn btn-action buy-now">Buy now</button>
+              </div>
             </div>
+          </div> 
+            <!--Slider control buttons -->
+            <div class="slider-control">
+              <button class="arrow" id="control" type="button"><i class="far fa-pause-circle"></i></button>
+              <button class="arrow" id="prev" type="button"><i class="fas fa-angle-double-left"></i></button>
+              <button class="arrow" id="next" type="button"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+        </div>
+        <a href="#shop" class="arrow section-scroll">
+          <i class="fas fa-angle-double-down"></i>
+        </a>
+      </section>
+      <!-- //Slider -->
+      <!-- Products//-->
+      <section id="shop">
+        <div class="module-wrapper"> 
+          <div class="shop-title">
+            <h2>Our chocolate collection</h2>
+            <p>Every chocoholic's dream gift - the ultimate collection of FAZER BLUE chocolate in every flavor. Sustainable cocoa production is vital for the future of manufacturing chocolate. 100 % of the cocoa we use comes from responsible sources.</p>
           </div>
         </div> 
-
-      <div class="buttons">
-        <button id="control" type="button"><i class="far fa-pause-circle"></i></button>
-          <button id="prev" type="button"><i class="fas fa-angle-double-left"></i></button>
-          <button id="next" type="button"><i class="fas fa-angle-double-right"></i></button>
-      </div>
-    </div>
+          <div class="products-center">
+            <!-- single product// -->
+            <!-- <article class="product">
+              <div class="img-container">
+                <img
+                  src="img/products/product-1.jpeg"
+                  alt="product"
+                  class="product-img"
+                />
+                <button class="bag-btn" data-id="1">
+                  <i class="fas fa-shopping-cart"></i>
+                  add to bag
+                </button>
+              </div>
+              <h3>queen bed</h3>
+              <h4>$16</h4>
+            </article> -->
+            <!-- //single product -->
+          </div>
+      </section>
+      <!-- //Products -->
     </main>
+
+    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
+  </div>
   </body>
 </html>
