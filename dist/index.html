@@ -38,11 +38,11 @@
                   <span>My Omega</span>
                 </a>
 
-                <div class="header-menu-dialog">
+                  <div class="header-menu-dialog">
                     <div class="header-authentication">
                       <div class="signin">
                         <form id="sign-in-form">
-                            <h2>I have an account</h2>
+                          <h2>I have an account</h2>
                           <div class="email-field">
                             <input type="email" id="email" class="text-input empty" data-validate="{required:true, 'validate-email':true}" autocomplete="off"/>
                             <label for="email" class="placeholder"> Email <span  class="aster">*</span></label>
@@ -68,9 +68,20 @@
                         <a href="#" class=" secondary-btn">Sign up</a>
                       </div>
               </li>
+              <li class="header-menu-item">
+                <div class="cart-btn">
+                  <span class="nav-icon">
+                    <i class="fas fa-shopping-bag fa-lg"></i>
+                  </span>
+                  <div class="cart-items">0</div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
+
+
+
         <!-- Main menu -->
         <div class="side-menu">
           <button class="btn btn-close" id="btn-close">
@@ -171,6 +182,43 @@
             </article> -->
             <!-- //single product -->
           </div>
+          <!-- cart// -->
+<div class="cart-overlay">
+  <div class="cart">
+    <!-- <div class="btn-wrapper"> -->
+        <button class="btn btn-close close-cart" id="btn-close" onclick="location.href='#shop'">
+          <span class="btn-close-x cart-x"><span></span></span>
+          Continue shopping
+        </button>
+      <!-- </div> -->
+        <!-- <span class="close-cart btn-close-x"><span></span></span> -->
+      <!-- <i class="fas fa-window-close"></i> -->
+    </span>
+    <h2>Items in cart</h2>
+    <div class="cart-content">
+      <!-- cart item// -->
+      <div class="cart-item">
+        <!-- <img src="./img/products/product-1.jpeg" alt="product" />
+        <div>
+          <h4>queen bed</h4>
+          <h5>$9.00</h5>
+          <span class="remove-item">remove</span>
+        </div>
+        <div>
+          <i class="fas fa-chevron-up"></i>
+          <p class="item-amount">1</p>
+          <i class="fas fa-chevron-down"></i>
+        </div> -->
+      </div>
+      <!-- //cart-item -->
+    </div>
+    <div class="cart-footer">
+      <h3>your total: $ <span class="cart-total">0</span></h3>
+      <button class="clear-cart banner-btn">clear cart</button>
+    </div>
+  </div>
+</div>
+<!-- //cart -->
       </section>
       <!-- //Products -->
     </main>

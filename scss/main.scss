@@ -79,7 +79,8 @@ button {
   transition: color 0.2s ease, border 0.2s ease;
   overflow: hidden;
   box-sizing: border-box;
-  &:hover {
+
+  &:hover:enabled {
     color: $bckgrd-color;
     border-color: $secondary-color;
     &::before {
@@ -98,6 +99,10 @@ button {
     transition: transform 0.5s $cubic-bezier;
     transform-origin: 0 0;
     z-index: -1;
+  }
+  &:disabled {
+    color: #07d3aa;
+    cursor: context-menu;
   }
 }
 
@@ -194,13 +199,37 @@ header {
 
   .header-menu-right {
     height: 60px;
-    // font-size: 20px;
     float: right;
     ul li.header-menu-item {
       display: inline-block;
       height: 60px;
       position: relative;
-      // margin: auto;
+      @include easeOut;
+      &:not(:last-child):hover {
+        color: $secondary-color;
+      }
+      &.my {
+        margin: 0 20px;
+      }
     }
+  }
+}
+
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+  .cart-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    background: $secondary-color;
+    width: 1.3rem;
+    height: 1.3rem;
+    text-align: center;
+    border-radius: 50%;
+    color: $bckgrd-color;
   }
 }
