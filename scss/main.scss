@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   letter-spacing: 0.04rem;
-  // for smooth scroll
+  // for smooth scrolling:
   height: 100vh;
   overflow: hidden;
 }
@@ -25,15 +25,13 @@ body {
 .container {
   width: 100%;
   height: 100%;
-  // for smooth scroll
+  // for smooth scrolling:
   overflow-y: scroll;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
 }
 
 section {
   width: 100%;
-  // height: 92vh;
   overflow: hidden;
 }
 
@@ -73,13 +71,17 @@ button {
 .btn-action {
   position: relative;
   display: inline-block;
+  line-height: 3;
   background: none;
   border: $border;
   border-radius: 2px;
   transition: color 0.2s ease, border 0.2s ease;
   overflow: hidden;
   box-sizing: border-box;
-
+  // &.dark-theme {
+  //   background: $dark-blue;
+  //   color: $bckgrd-color;
+  // }
   &:hover:enabled {
     color: $bckgrd-color;
     border-color: $secondary-color;
@@ -98,17 +100,30 @@ button {
     transform: scaleY(0);
     transition: transform 0.5s $cubic-bezier;
     transform-origin: 0 0;
-    z-index: -1;
   }
   &:disabled {
     color: #07d3aa;
     cursor: context-menu;
   }
+  > span {
+    position: relative;
+  }
+}
+
+.dark-theme {
+  background: $dark-blue;
+  color: $bckgrd-color;
+  &:hover {
+    color: $secondary-color !important;
+    border-color: $gray-border-color !important;
+  }
+  &::before {
+    background: $bckgrd-color;
+  }
 }
 
 .buy-now {
   width: 80%;
-  line-height: 3;
 }
 
 // Header
@@ -168,7 +183,6 @@ header {
       top: 1px;
       left: -3px;
       background: $secondary-color;
-      // background: $primary-color;
       width: 25px;
       height: 25px;
       border-radius: 50%;

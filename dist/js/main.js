@@ -77,11 +77,11 @@ function closeMenu() {
   closeBtn.classList.add('closed');
   dark.classList.remove('show');
   sideMenu.classList.remove('show');
-
   header.classList.remove('close');
 }
 dark.addEventListener('click', closeMenu);
-
+const darkCart = new Cart();
+dark.addEventListener('click', darkCart.hideCart);
 // Slider
 const slides = document.querySelectorAll('.slide');
 const next = document.querySelector('#next');

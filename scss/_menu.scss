@@ -40,7 +40,6 @@
               font-size: 22px;
             }
           }
-
           .menu-icons {
             display: block;
             margin-bottom: 1rem;
@@ -121,6 +120,9 @@
     width: 100vw;
     opacity: 0.45;
     transition: opacity 0.8s $cubic-bezier;
+  }
+  &.cart-overlay {
+    z-index: 1000;
   }
 }
 

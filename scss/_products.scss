@@ -78,64 +78,41 @@
 }
 
 // Cart
-.cart-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  transition: var(--mainTransition);
-  background: rgba(240, 157, 81, 0.5);
-  z-index: 10000;
-  visibility: hidden;
-  // visibility: visible;
-}
 .cart {
+  z-index: 1501;
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
+  width: 25vw;
+  min-width: 420px;
   overflow-y: scroll;
-  z-index: 3;
+  overflow-x: hidden;
   background: $bckgrd-color;
-  // padding: 0 1.5rem;
+  border-top-left-radius: 25px;
   @include easeOut();
   transform: translateX(100%);
-}
-
-.cart-x {
-  left: 5%;
-}
-
-// .btn-wrapper {
-//   position: relative;
-// }
-
-.showCart {
-  transform: translateX(0);
-}
-.transparentBcg {
-  visibility: visible;
-}
-@media screen and (min-width: 768px) {
-  .cart {
-    width: 25vw;
-    min-width: 420px;
+  &.showCart {
+    transform: translateX(0);
+  }
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 1rem 0 0;
+  }
+  .cart-x {
+    left: 5%;
   }
 }
-
-// .close-cart {
-//   font-size: 1.7rem;
-//   cursor: pointer;
+// @media screen and (min-width: 768px) {
+//   .cart {
+//     width: 25vw;
+//     min-width: 420px;
+//   }
 // }
-.cart h2 {
-  text-transform: uppercase;
-  text-align: center;
-  // letter-spacing: var(--mainSpacing);
-  margin: 1rem 0 0;
-}
-/*---------- Cart Item -------------------- */
+
+// Cart Item
 .cart-item {
   display: grid;
   align-items: center;
@@ -151,6 +128,12 @@
   padding: 0 1.5rem;
   margin: 0 0 1.5rem;
   box-shadow: 0px 24px 2px -24px $primary-color;
+  transform: translateX(0);
+
+  @include easeOutQuick();
+  &.remove {
+    transform: translateX(100%);
+  }
   img {
     grid-area: image;
     width: 75px;
@@ -159,40 +142,65 @@
   h4 {
     grid-area: description;
     text-transform: capitalize;
-    font-weight: 400;
+    font-weight: 300;
   }
-  h5 {
+  h5.price {
     grid-area: price;
     font-size: 1.25rem;
+    color: $dark-blue;
   }
   .quantity {
     grid-area: quantity;
     margin: 0.5rem 0;
-    font-weight: 400;
+    font-weight: 300;
     text-align: right;
   }
   .item-amount {
     grid-area: amount;
     text-align: center;
     font-size: 1.25rem;
+    color: $dark-blue;
   }
-}
 
-.remove-item {
-  grid-area: remove;
-  color: grey;
-  cursor: pointer;
-  font-weight: 400;
+  .remove-item {
+    font-size: 1rem;
+    grid-area: remove;
+    color: grey;
+    cursor: pointer;
+    font-weight: 300;
+    @include easeOutQuick();
+    &:hover {
+      color: $secondary-color;
+    }
+  }
 }
 
 .fa-plus,
 .fa-minus {
+  position: relative;
   cursor: pointer;
   text-align: center;
   margin-bottom: 0.7rem;
-  @include easeOut();
   &:hover {
+    @include easeOutQuick();
     color: $secondary-color;
+  }
+  &:after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: -5px;
+    left: 25px;
+    background: $secondary-color;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transform: scale(1.3);
+    @include easeOutQuick();
+  }
+  &:active:after {
+    opacity: 1;
+    transform: scale(0);
   }
 }
 
@@ -202,14 +210,35 @@
 .fa-minus {
   grid-area: minus;
 }
-/*---------- End of Cart Item -------------------- */
 
+// Total
 .cart-footer {
-  margin-top: 2rem;
-  // letter-spacing: var(--mainSpacing);
-  text-align: center;
-}
-.cart-footer h3 {
-  text-transform: capitalize;
-  margin-bottom: 1rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr 1fr auto;
+  grid-template-areas:
+    'total . . sum'
+    'clearCart clearCart checkout checkout ';
+  grid-gap: 1.5rem;
+  padding: 0 1.5rem;
+  margin: 0 0 15rem;
+  font-size: 1.25rem;
+  color: $dark-blue;
+  h3 {
+    grid-area: total;
+  }
+  span {
+    grid-area: sum;
+  }
+  button.clear {
+    grid-area: clearCart;
+    line-height: 3;
+    @include easeOut();
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+  button.checkout {
+    grid-area: checkout;
+  }
 }
