@@ -107,7 +107,7 @@
 }
 
 .dark-overlay {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   z-index: 850;
@@ -116,10 +116,15 @@
   background: #000;
   opacity: 0;
   transition: opacity 0.8s $cubic-bezier;
+  // overflow: hidden;
+
   &.show {
     width: 100vw;
     opacity: 0.45;
     transition: opacity 0.8s $cubic-bezier;
+    body {
+      overflow: hidden;
+    }
   }
   &.cart-overlay {
     z-index: 1000;

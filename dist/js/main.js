@@ -61,6 +61,8 @@ const closeBtn = document.querySelector('#btn-close');
 const sideMenu = document.querySelector('.side-menu');
 const dark = document.querySelector('.dark-overlay');
 const header = document.querySelector('.header-sticky');
+const headerWrap = document.querySelector('.header-wrapper');
+const body = document.body;
 // const hdr = document.querySelector('.page-header')
 menuBtn.addEventListener('click', toggleMenu);
 // initial state:
@@ -70,6 +72,7 @@ function toggleMenu() {
   sideMenu.classList.add('show');
   dark.classList.add('show');
   header.classList.add('close');
+  body.classList.add('modal-opened');
 }
 
 closeBtn.addEventListener('click', closeMenu);
@@ -78,8 +81,10 @@ function closeMenu() {
   dark.classList.remove('show');
   sideMenu.classList.remove('show');
   header.classList.remove('close');
+  body.classList.remove('modal-opened');
 }
 dark.addEventListener('click', closeMenu);
+
 const darkCart = new Cart();
 dark.addEventListener('click', darkCart.hideCart);
 // Slider
@@ -155,4 +160,18 @@ controlBtn.addEventListener('click', e => {
     slideInterval = setInterval(nextSlide, intervalTime);
     icon.setAttribute('class', 'far fa-pause-circle');
   }
+});
+
+// Hide header on scroll
+let prevScrollPos = window.pageYOffset;
+window.onscroll = function() {
+  let currentScrollPos = window.pageYOffset;
+  prevScrollPos > currentScrollPos
+    ? headerWrap.classList.remove('hide')
+    : headerWrap.classList.add('hide');
+  prevScrollPos = currentScrollPos;
+};
+// Smooth scroll effect (3d party cdn)
+const scroll = new SmoothScroll('.menu a[href*="#"]', {
+  speed: 800
 });
