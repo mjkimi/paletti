@@ -19,7 +19,7 @@ let buttonsDOM = [];
 class Products {
   async fetchProducts() {
     try {
-      const res = await fetch('./products.json');
+      const res = await fetch('./data/products.json');
       const products = await res.json();
       return products;
     } catch (err) {

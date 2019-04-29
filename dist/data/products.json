@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Milk Chocolate 200g",
+    "description": "The luxurious taste of milk chocolate is the perfect accompaniment to any moment.",
+    "price": 2.61,
+    "image": "img/products/milk.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Chopped hazelnuts in milk chocolate 200g",
+    "description": "Milk chocolate and chopped hazelnuts - a scrumptious combination of two flavors. ",
+    "price": 2.66,
+    "image": "img/products/hazelnuts.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Orange in dark chocolate 200g",
+    "description": "A full-bodied combination of smooth dark chocolate and tangy orange.",
+    "price": 2.66,
+    "image": "img/products/orange.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Raisin and hazelnuts 200g",
+    "description": "A traditional combination of milk chocolate, nuts and raisins.",
+    "price": 2.66,
+    "image": "img/products/raisin_hazelnuts.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Vanilla in milk chocolate 190g",
+    "description": "The yummy mix of milk chocolate and natural vanilla.",
+    "price": 2.66,
+    "image": "img/products/vanilla.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Peppermint in milk chocolate 200g",
+    "description": "A refreshing combination of milk chocolate and peppermint crunch.",
+    "price": 2.66,
+    "image": "img/products/peppermint.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Lime & Mint in dark chocolate 190g",
+    "description": "Dark chocolate is now accompanied by delicious combination of grounded mint and lime juice.",
+    "price": 2.66,
+    "image": "img/products/lime_mint.jpg"
+  },
+  {
+    "id": 8,
+    "title": "47% Dark chocolate 200g",
+    "description": "This smooth, mouthwatering dark chocolate is bursting with cocoa flavor.",
+    "price": 2.71,
+    "image": "img/products/dark.jpg"
+  }
+]

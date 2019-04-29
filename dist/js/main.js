@@ -84,6 +84,7 @@ function closeMenu() {
   body.classList.remove('modal-opened');
 }
 dark.addEventListener('click', closeMenu);
+sideMenu.addEventListener('click', closeMenu);
 
 const darkCart = new Cart();
 dark.addEventListener('click', darkCart.hideCart);
