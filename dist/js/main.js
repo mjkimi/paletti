@@ -176,3 +176,70 @@ window.onscroll = function() {
 const scroll = new SmoothScroll('.menu a[href*="#"]', {
   speed: 800
 });
+
+/* ------------- Search --------------- */
+const searchBtn = document.querySelector('#search-btn');
+const searchHeader = document.querySelector('.header-search');
+const searchBlock = document.querySelector('.search-block');
+
+searchBtn.addEventListener('click', showSearchForm);
+
+function showSearchForm() {
+  searchHeader.classList.remove('header-search-closed');
+  dark.classList.add('show');
+  searchHeader.ontransitionend = () => {
+    closeSearch();
+  };
+  showInput();
+}
+
+function showInput() {
+  searchBlock.classList.add('search-block-close');
+}
+function hideInput() {
+  searchBlock.classList.remove('search-block-close');
+}
+
+function hideSearchForm() {
+  searchHeader.classList.add('header-search-closed');
+  dark.classList.remove('show');
+  hideInput();
+}
+
+function closeSearch() {
+  document.addEventListener('mouseup', function handler(e) {
+    const searchBlock = document.querySelector('.search-block');
+    let targetElement = e.target; // clicked element
+    if (!searchBlock.contains(targetElement)) {
+      hideSearchForm();
+      this.removeEventListener('mouseup', handler);
+    }
+  });
+}
+
+// Search functionality
+const input = document.querySelector('.input-text');
+const matchList = document.querySelector('#match-list');
+
+// Переделать ч/з классы!!!!!!!!!!!!!!!!!!!!!!
+const searchStates = async searchText => {
+  const res = await fetch('./data/products.json');
+  const states = await res.json();
+  // console.log(states);
+
+  // Get matches to current text input
+  let matches = states.filter(state => {
+    // const regex = new RegExp(`^${searchText}`, 'gi');
+    const regex = new RegExp(`\\b${searchText}`, 'gi');
+    return state.title.match(regex);
+
+    // if (searchText.length === 0) {
+    //   matches = [];
+    // }
+  });
+  console.log(matches);
+};
+
+input.addEventListener('input', () => searchStates(input.value));
+
+/* End--------------Search----------------- */
