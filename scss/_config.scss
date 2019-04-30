@@ -7,6 +7,20 @@ $border: 1px solid $gray-border-color;
 $cubic-bezier: cubic-bezier(0.19, 1, 0.22, 1);
 $letter-spacing: 0.15rem;
 $word-spacing: 0.5rem;
+$border-radius-big: 25px;
+
+// $blue: #1c63bc;
+
+:root {
+  --blue: #1c63bc;
+  --yellow: #ffdd20;
+  --orange: #f99737;
+  --red: #ed5f43;
+  --pink: #b22f67;
+  --green: #8db84a;
+  --violet: #8d6cd0;
+  --light-blue: #60aac8;
+}
 
 @mixin easeOut {
   transition: all 0.5s ease-in-out;

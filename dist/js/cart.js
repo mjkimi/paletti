@@ -35,7 +35,7 @@ class UI {
     let result = '';
     products.forEach(product => {
       result += `
-      <article class="product">
+      <article class="product" id="${product.id}">
           <div class="img-container">
             <img
               src=${product.image}

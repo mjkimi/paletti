@@ -15,16 +15,26 @@
         
         <!-- Search // -->
         <div class="header-search header-search-closed ">
+          <div class="white-bg">
             <div class="search-block">
               <form method="get">
-                <input type="text" class="input-text" placeholder="Search for products...">
+                <input type="text" id="search-field" class="input-text" placeholder="Search for products..." >
+                <label for="search-field">&#42;enter name or color</label>
                 <div class="search-icon">
                    <i class="fas fa-search"></i>
                 </div>
+                
               </form>
+              
             </div>
           </div>
-          <div id="match-list"></div>
+            <!--Search results are inserted here:-->
+            <div id="search-result"></div>
+              
+            
+          </div>
+          
+          
           <!-- // Search -->
 
 

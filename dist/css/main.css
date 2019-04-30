@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web:300,600");
+:root {
+  --blue: #1c63bc;
+  --yellow: #ffdd20;
+  --orange: #f99737;
+  --red: #ed5f43;
+  --pink: #b22f67;
+  --green: #8db84a;
+  --violet: #8d6cd0;
+  --light-blue: #60aac8; }
+
 .header-menu-dialog {
   background: #fff;
   position: absolute;
@@ -751,27 +761,30 @@ header {
   left: 0;
   top: 60px;
   width: 100%;
-  text-align: center;
-  padding: 30px 0;
   opacity: 1;
   transform: translateY(0%);
+  height: auto;
   transition: opacity 0.4s linear, transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  background: #f9f9f9;
   z-index: 851; }
+  .header-search .white-bg {
+    background: #f9f9f9;
+    width: inherit;
+    height: auto;
+    padding: 1rem 0; }
   .header-search.header-search-closed {
     opacity: 0;
     transform: translateY(-200%);
     transition: opacity 0.2s linear, transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); }
   .header-search .search-block {
-    border-left: 2px solid #7e7e7e;
     margin: 0 auto;
     color: #555;
-    text-transform: capitalize;
     position: relative;
     width: 1.5rem;
     transition: width 0.2s linear 0.5s; }
     .header-search .search-block.search-block-close {
       width: 550px; }
+      .header-search .search-block.search-block-close label {
+        opacity: 1; }
   .header-search .input-text {
     width: 100%;
     font-size: 1.5rem;
@@ -781,7 +794,17 @@ header {
     font-weight: 400;
     letter-spacing: 0.15rem;
     padding: 0 1rem;
-    background: inherit; }
+    background: inherit;
+    border-left: 2px solid #7e7e7e; }
+  .header-search label {
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    font-weight: 400;
+    margin-left: 0.5rem;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s linear 0.5s; }
   .header-search .search-icon {
     display: flex;
     align-items: center;
@@ -793,6 +816,24 @@ header {
     height: 50px;
     font-size: 1.5rem;
     margin-left: 1.5rem; }
+  .header-search #search-result {
+    margin: 0 auto;
+    width: 550px; }
+    .header-search #search-result .matched {
+      font-weight: 400;
+      background: #f9f9f9;
+      text-align: left;
+      transition: color 0.2s ease-in, background 0.1s ease-in; }
+      .header-search #search-result .matched:last-child {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px; }
+      .header-search #search-result .matched:hover {
+        color: #d3071b;
+        background: #e2e2e2; }
+      .header-search #search-result .matched > a {
+        width: 100%;
+        padding: 1rem;
+        display: inline-block; }
 
 .cart-btn {
   position: relative;

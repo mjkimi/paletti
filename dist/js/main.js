@@ -173,7 +173,7 @@ window.onscroll = function() {
   prevScrollPos = currentScrollPos;
 };
 // Smooth scroll effect (3d party cdn)
-const scroll = new SmoothScroll('.menu a[href*="#"]', {
+const scroll = new SmoothScroll(' a[href*="#"]', {
   speed: 800
 });
 
@@ -194,7 +194,9 @@ function showSearchForm() {
 }
 
 function showInput() {
+  cleanAllMatch();
   searchBlock.classList.add('search-block-close');
+  input.focus();
 }
 function hideInput() {
   searchBlock.classList.remove('search-block-close');
@@ -219,27 +221,56 @@ function closeSearch() {
 
 // Search functionality
 const input = document.querySelector('.input-text');
-const matchList = document.querySelector('#match-list');
+const searchRes = document.querySelector('#search-result');
+let products;
+let matches;
 
 // Переделать ч/з классы!!!!!!!!!!!!!!!!!!!!!!
-const searchStates = async searchText => {
+const getProducts = async () => {
   const res = await fetch('./data/products.json');
-  const states = await res.json();
-  // console.log(states);
-
+  products = await res.json();
+};
+const searchProducts = searchText => {
   // Get matches to current text input
-  let matches = states.filter(state => {
-    // const regex = new RegExp(`^${searchText}`, 'gi');
+  matches = products.filter(product => {
     const regex = new RegExp(`\\b${searchText}`, 'gi');
-    return state.title.match(regex);
-
-    // if (searchText.length === 0) {
-    //   matches = [];
-    // }
+    return product.title.match(regex) || product.color.match(regex);
   });
-  console.log(matches);
+
+  if (searchText.length === 0) {
+    cleanAllMatch();
+  }
+
+  outputHtml(matches);
 };
 
-input.addEventListener('input', () => searchStates(input.value));
+const cleanAllMatch = () => {
+  matches = [];
+  searchRes.innerHTML = '';
+  input.value = '';
+};
+
+// Show search results
+const outputHtml = matches => {
+  if (matches.length > 0) {
+    const html = matches
+      .map(
+        match => `
+        <div class="matched">
+          <a href="#${match.id}">
+            <i class="fas fa-tint fa-xs" 
+              style="color:var(--${match.color.split(',')[0]})"></i> ${
+          match.title
+        }
+          </a>
+        </div>
+      `
+      )
+      .join('');
+    searchRes.innerHTML = html;
+  }
+};
+window.addEventListener('DOMContentLoaded', getProducts);
+input.addEventListener('input', () => searchProducts(input.value));
 
 /* End--------------Search----------------- */

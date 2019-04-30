@@ -92,7 +92,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   background: $bckgrd-color;
-  border-top-left-radius: 25px;
+  border-top-left-radius: $border-radius-big;
   @include easeOut();
   transform: translateX(100%);
   &.showCart {
