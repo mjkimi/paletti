@@ -6,6 +6,7 @@
   width: 250px;
   background: $bckgrd-color;
   transform: translate3d(-100%, 0, 0);
+
   @include easeOut();
   &.show {
     transform: translate3d(0, 0, 0);
@@ -63,11 +64,11 @@
   border-bottom: $border;
   color: $secondary-color;
   box-shadow: 0 8px 20px -6px $gray-border-color;
-  transform: rotate(0);
+  // transform: rotate(0);
   opacity: 1;
   @include easeOutQuick;
   &.closed {
-    opacity: 0 !important;
+    opacity: 0;
   }
   &:hover span.btn-close-x {
     transform: rotate(90deg);
@@ -116,15 +117,14 @@
   background: #000;
   opacity: 0;
   transition: opacity 0.8s $cubic-bezier;
-  // overflow: hidden;
 
   &.show {
     width: 100vw;
     opacity: 0.45;
     transition: opacity 0.8s $cubic-bezier;
-    body {
-      overflow: hidden;
-    }
+    // body {
+    //   overflow: hidden;
+    // }
   }
   &.cart-overlay {
     z-index: 1000;

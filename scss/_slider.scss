@@ -1,12 +1,14 @@
 .slider-wrapper {
   position: relative;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .slider {
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   height: calc(100vh - 150px);
-  width: 100vw;
+  // width: 100vw;
   &.dark-bg {
     background: $primary-color;
   }
@@ -93,7 +95,8 @@
 
 .section-scroll {
   display: block;
-  width: 100%;
+  width: 100vw;
+  // overflow: hidden;
   height: 80px;
   position: relative;
   i {

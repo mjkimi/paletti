@@ -72,6 +72,7 @@ function toggleMenu() {
   sideMenu.classList.add('show');
   dark.classList.add('show');
   header.classList.add('close');
+  // document.querySelector('.container').style.overflow = 'hidden';
   body.classList.add('modal-opened');
 }
 
@@ -82,6 +83,7 @@ function closeMenu() {
   sideMenu.classList.remove('show');
   header.classList.remove('close');
   body.classList.remove('modal-opened');
+  // document.querySelector('.container').style.overflowY = 'scroll';
 }
 dark.addEventListener('click', closeMenu);
 sideMenu.addEventListener('click', closeMenu);
@@ -181,11 +183,13 @@ const scroll = new SmoothScroll(' a[href*="#"]', {
 const searchBtn = document.querySelector('#search-btn');
 const searchHeader = document.querySelector('.header-search');
 const searchBlock = document.querySelector('.search-block');
+const closeSearchBtn = document.querySelector('#search-close');
 
 searchBtn.addEventListener('click', showSearchForm);
 
 function showSearchForm() {
   searchHeader.classList.remove('header-search-closed');
+  closeSearchBtn.classList.add('activated');
   dark.classList.add('show');
   searchHeader.ontransitionend = () => {
     closeSearch();
@@ -204,6 +208,7 @@ function hideInput() {
 
 function hideSearchForm() {
   searchHeader.classList.add('header-search-closed');
+  closeSearchBtn.classList.remove('activated');
   dark.classList.remove('show');
   hideInput();
 }
@@ -255,6 +260,7 @@ const outputHtml = matches => {
   if (matches.length > 0) {
     const html = matches
       .map(
+        // for <i> style picking only 1st word in color data
         match => `
         <div class="matched">
           <a href="#${match.id}">
