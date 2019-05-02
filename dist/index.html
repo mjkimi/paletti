@@ -9,10 +9,9 @@
     <title>Paletti Chocolate Store | New Arrivals Now Online</title>
   </head>
   <body>
-  <div class="container">
+  <!-- <div class="container"> -->
     <header class="page-header">
       <div class="header-wrapper">
-        
         <!-- Search // -->
         <div class="header-search header-search-closed ">
           <div class="white-bg">
@@ -21,104 +20,91 @@
                 <input type="text" id="search-field" class="input-text" placeholder="Search for products..." >
                 <label for="search-field">&#42;enter name or color</label>
                 <div class="search-icon">
-                   <i class="fas fa-search"></i>
+                  <i class="fas fa-search"></i>
                 </div>
-                
               </form>
-              
             </div>
           </div>
-            <!--Search results are inserted here:-->
-            <div id="search-result"></div>
-              
-            
-          </div>
-          
-          
-          <!-- // Search -->
-
-
-
+          <!--Search results are inserted below:-->
+          <div id="search-result"></div> 
+        </div>
+        <!-- // Search -->
+        <!-- Sticky menu // -->
         <div class="header-sticky">
           <div class="column">
-              <button class="btn main-menu-btn" id="main-menu-btn" type="button">
-                  <span class="hamburger-menu">&#9776;</span>
-                  <span class="text">Menu</span>
-                </button>
-                <a href="#" class="logo" title=""
-                  >Logo
-                  <img src="" alt="" />
-                </a>
-                <div class="header-menu-right">
-                  <ul>
-                    <li class="header-menu-item">
-                      <button
-                        id="search-btn"
-                        class="btn header-menu-btn"
-                        type="button"
-                      >
-                        <i class="fas fa-search"></i>
-                        <span>Search</span>
-                      </button>
-                    </li>
-                    <li class="header-menu-item my">
-                      <a href="#" class="btn">
-                        <span>My P</span>
-                      </a>
-      
-                        <div class="header-menu-dialog">
-                          <div class="header-authentication">
-                            <div class="signin">
-                              <form id="sign-in-form">
-                                <h2>I have an account</h2>
-                                <div class="email-field">
-                                  <input type="email" id="email" class="text-input empty" data-validate="{required:true, 'validate-email':true}" autocomplete="off"/>
-                                  <label for="email" class="placeholder"> Email <span  class="aster">*</span></label>
-                                </div>
-                                <div class="password-field">
-                                  <input type="password" id="password" class="text-input empty" data-validate="{required:true}" autocomplete="off"/>
-                                  <label for="password" class="placeholder"> Password <span class="aster">*</span></label>
-                                  <div class="error-msg" id="error-msg"></div>
-                                </div>
-                                
-                                <div class="link">
-                                    <a href="#">Forgot Your Password?</a>
-                                  </div>
-                                <button type="submit" class="primary-btn">Login</button>
-                              </form>
-                              
-                              <div class="or">
-                                <hr class="bar" />
-                                <span>OR</span>
-                                <hr class="bar" />
-                              </div>
-                              <p>To benefit from our exclusive services and keep up to date with our latest publications <span>&#10150;</span></p>
-                              <a href="#" class=" secondary-btn">Sign up</a>
-                            </div>
-                    </li>
-                    <li class="header-menu-item">
-                      <div class="cart-btn">
-                        <span class="nav-icon">
-                          <i class="fas fa-shopping-bag fa-lg"></i>
-                        </span>
-                        <div class="cart-items">0</div>
-                      </div>
-                    </li>
-                  </ul>
-                  <button class="btn btn-close" id="search-close">
-                    <span class="btn-close-x search-x"><span></span></span>
-                    Close
+            <button class="btn main-menu-btn" id="main-menu-btn" type="button">
+              <span class="hamburger-menu">&#9776;</span>
+              <span class="text">Menu</span>
+            </button>
+            <a href="#" class="logo" title="Paletti logo">Logo
+              <img src="" alt="" />
+            </a>
+            <div class="header-menu-right">
+              <ul>
+                <li class="header-menu-item">
+                  <button
+                    id="search-btn"
+                    class="btn header-menu-btn"
+                    type="button"
+                  >
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
                   </button>
-                </div>
+                </li>
+                
+                <li class="header-menu-item my">
+                  <a href="#" class="btn">
+                    <span>My P</span>
+                  </a>
+                    <!-- Sign in form -->
+                    <div class="header-menu-dialog">
+                      <div class="header-authentication">
+                        <div class="signin">
+                          <form id="sign-in-form">
+                            <h2>I have an account</h2>
+                            <div class="email-field">
+                              <input type="email" id="email" class="text-input empty" data-validate="{required:true, 'validate-email':true}" autocomplete="off"/>
+                              <label for="email" class="placeholder"> Email <span  class="aster">*</span></label>
+                            </div>
+                            <div class="password-field">
+                              <input type="password" id="password" class="text-input empty" data-validate="{required:true}" autocomplete="off"/>
+                              <label for="password" class="placeholder"> Password <span class="aster">*</span></label>
+                              <div class="error-msg" id="error-msg"></div>
+                            </div>
+                            <div class="link">
+                              <a href="#">Forgot Your Password?</a>
+                            </div>
+                            <button type="submit" class="primary-btn">Login</button>
+                          </form>
+                          <div class="or">
+                            <hr class="bar" />
+                            <span>OR</span>
+                            <hr class="bar" />
+                          </div>
+                          <p>To benefit from our exclusive services and keep up to date with our latest publications <span>&#10150;</span></p>
+                          <a href="#" class=" secondary-btn">Sign up</a>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+
+                <li class="header-menu-item">
+                  <div class="cart-btn">
+                    <span class="nav-icon">
+                      <i class="fas fa-shopping-bag fa-lg"></i>
+                    </span>
+                    <div class="cart-items">0</div>
+                  </div>
+                </li>
+              </ul>
+              <button class="btn btn-close" id="search-close">
+                <span class="btn-close-x search-x"><span></span></span>
+                Close
+              </button>
+            </div>
           </div>
-
-
-
-          
         </div>
-
-
-
+        <!-- // Sticky menu -->
         <!-- Main menu -->
         <div class="side-menu">
           <button class="btn btn-close" id="btn-close">
@@ -154,8 +140,9 @@
               </ul>
           </nav>
         </div>
+        <!-- Dark overlay -->
         <div class="dark-overlay"></div>
-      </nav>
+      </div>
     </header>
     <main>
       <!-- Slider// -->
@@ -176,7 +163,8 @@
               <div class="side-module">
                 <img src="./img/module1.png" alt="">
                 <h2>Shop Fazer products online</h2>
-                <button type="button" class="btn btn-action buy-now"><span>Buy now</span></button>
+                <button type="button" class="btn btn-action buy-now"><span>Buy now</span>
+                </button>
               </div>
             </div>
           </div> 
@@ -200,67 +188,48 @@
             <p>Every chocoholic's dream gift - the ultimate collection of PALETTI chocolate in every flavor. Sustainable cocoa production is vital for the future of manufacturing chocolate. 100 % of the cocoa we use comes from responsible sources.</p>
           </div>
         </div> 
-          <div class="showcase-wrapeer">
+        <div class="showcase-wrapeer">
           <div class="products-center">
-            <!-- single product// -->
-            <!-- <article class="product">
-              <div class="img-container">
-                <img
-                  src="img/products/product-1.jpeg"
-                  alt="product"
-                  class="product-img"
-                />
-                <button class="bag-btn" data-id="1">
-                  <i class="fas fa-shopping-cart"></i>
-                  add to bag
-                </button>
-              </div>
-              <h3>queen bed</h3>
-              <h4>$16</h4>
-            </article> -->
-            <!-- //single product -->
+            <!--Products to buy are inserted here from JSON// -->
           </div>
         </div>
-          <!-- cart// -->
-<div class="cart-overlay">
-  <div class="cart">
-    <!-- <div class="btn-wrapper"> -->
-        <button class="btn btn-close close-cart" id="btn-close" onclick="location.href='#shop'">
-          <span class="btn-close-x cart-x"><span></span></span>
-          Continue shopping
-        </button>
-      <!-- </div> -->
-        <!-- <span class="close-cart btn-close-x"><span></span></span> -->
-      <!-- <i class="fas fa-window-close"></i> -->
-    </span>
-    <h2>Items in cart</h2>
-    <div class="cart-content">
-      <!-- cart item// -->
-      <!-- <div class="cart-item"> -->
-        <!-- <img src="./img/products/product-1.jpeg" alt="product" />
-        <div>
-          <h4>queen bed</h4>
-          <h5>$9.00</h5>
-          <span class="remove-item">remove</span>
+
+        <!-- Cart// -->
+        <div class="cart-overlay">
+          <div class="cart">
+            <button class="btn btn-close close-cart" id="btn-close" onclick="location.href='#shop'">
+              <span class="btn-close-x cart-x"><span></span></span>
+              Continue shopping
+            </button>
+            <!-- </span> -->
+            <h2>Items in cart</h2>
+            <div class="cart-content">
+              <!-- cart item// -->
+              <!-- <div class="cart-item"> -->
+                <!-- <img src="./img/products/product-1.jpeg" alt="product" />
+                <div>
+                  <h4>queen bed</h4>
+                  <h5>$9.00</h5>
+                  <span class="remove-item">remove</span>
+                </div>
+                <div>
+                  <i class="fas fa-chevron-up"></i>
+                  <p class="item-amount">1</p>
+                  <i class="fas fa-chevron-down"></i>
+                </div> -->
+              <!-- </div> -->
+              <!-- //cart-item -->
+            </div>
+            <div class="cart-footer">
+              <h3>Total</h3>
+              <span class="cart-total">0</span>
+              <button class="btn clear-cart banner-btn clear">Clear cart</button>
+              <button class="btn btn-action checkout dark-theme" >
+              <span> Checkout</span></button>
+            </div>
+          </div>
         </div>
-        <div>
-          <i class="fas fa-chevron-up"></i>
-          <p class="item-amount">1</p>
-          <i class="fas fa-chevron-down"></i>
-        </div> -->
-      <!-- </div> -->
-      <!-- //cart-item -->
-    </div>
-    <div class="cart-footer">
-      <h3>Total</h3>
-      <span class="cart-total">0</span>
-      <button class="btn clear-cart banner-btn clear">Clear cart</button>
-      <button class="btn btn-action checkout dark-theme" >
-       <span> Checkout</span></button>
-    </div>
-  </div>
-</div>
-<!-- //cart -->
+        <!-- //cart -->
       </section>
       <!-- //Products -->
     </main>
