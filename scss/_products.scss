@@ -11,20 +11,15 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-weight: 300;
     margin-bottom: 5rem;
 
     h2 {
-      font-size: 2rem;
-      text-transform: uppercase;
       letter-spacing: $letter-spacing;
       color: $secondary-color;
       margin-bottom: 1rem;
       word-spacing: $word-spacing;
-      font-weight: 200;
     }
     p {
-      font-size: 1.1rem;
       margin-bottom: 2rem;
     }
   }
@@ -68,9 +63,6 @@
   }
   .description-wrapper {
     min-height: 73px;
-    p {
-      font-weight: 400;
-    }
   }
 
   h4 {
@@ -103,9 +95,10 @@
     transform: translateX(0);
   }
   h2 {
-    text-transform: uppercase;
+    font-size: 1.5rem;
     text-align: center;
     margin: 1rem 0 0;
+    font-weight: 600;
   }
   .cart-x {
     left: 5%;

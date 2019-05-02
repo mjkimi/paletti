@@ -34,7 +34,7 @@ body {
 //   height: 100%;
 // }
 
-section {
+section.section {
   width: 100%;
   overflow: hidden;
 }
@@ -45,6 +45,19 @@ h3,
 h4,
 p {
   margin: 0;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+p {
+  font-weight: 400;
+  &.large {
+    font-size: 1.1rem;
+  }
 }
 
 a {
@@ -383,5 +396,41 @@ button#search-close {
     text-align: center;
     border-radius: 50%;
     color: $bckgrd-color;
+  }
+}
+
+// Entertainment
+section#entertainment {
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  height: 100vh;
+  background: url(../img/dark-section.jpg) no-repeat bottom/cover;
+}
+
+.section-container {
+  max-width: 1180px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.gift-cards {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-row-gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+  img {
+    max-width: 100%;
+    // max-height: 300px;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    h2 {
+      margin-bottom: 1rem;
+      letter-spacing: $letter-spacing;
+      color: $secondary-color;
+    }
   }
 }

@@ -393,18 +393,13 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-weight: 300;
     margin-bottom: 5rem; }
     .module-wrapper .shop-title h2 {
-      font-size: 2rem;
-      text-transform: uppercase;
       letter-spacing: 0.15rem;
       color: #d3071b;
       margin-bottom: 1rem;
-      word-spacing: 0.5rem;
-      font-weight: 200; }
+      word-spacing: 0.5rem; }
     .module-wrapper .shop-title p {
-      font-size: 1.1rem;
       margin-bottom: 2rem; }
 
 .showcase-wrapeer {
@@ -440,8 +435,6 @@
       margin-top: 1rem; }
   .product .description-wrapper {
     min-height: 73px; }
-    .product .description-wrapper p {
-      font-weight: 400; }
   .product h4 {
     font-weight: 600;
     color: #000;
@@ -466,9 +459,10 @@
   .cart.showCart {
     transform: translateX(0); }
   .cart h2 {
-    text-transform: uppercase;
+    font-size: 1.5rem;
     text-align: center;
-    margin: 1rem 0 0; }
+    margin: 1rem 0 0;
+    font-weight: 600; }
   .cart .cart-x {
     left: 5%; }
 
@@ -596,7 +590,7 @@ body {
   body.modal-opened {
     overflow: hidden; }
 
-section {
+section.section {
   width: 100%;
   overflow: hidden; }
 
@@ -606,6 +600,16 @@ h3,
 h4,
 p {
   margin: 0; }
+
+h2 {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-weight: 400; }
+
+p {
+  font-weight: 400; }
+  p.large {
+    font-size: 1.1rem; }
 
 a {
   text-decoration: none;
@@ -862,3 +866,31 @@ button#search-close {
     text-align: center;
     border-radius: 50%;
     color: #fff; }
+
+section#entertainment {
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  height: 100vh;
+  background: url(../img/dark-section.jpg) no-repeat bottom/cover; }
+
+.section-container {
+  max-width: 1180px;
+  width: 80%;
+  margin: 0 auto; }
+
+.gift-cards {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-row-gap: 5rem;
+  grid-template-columns: 1fr 1fr; }
+  .gift-cards img {
+    max-width: 100%; }
+  .gift-cards .description {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center; }
+    .gift-cards .description h2 {
+      margin-bottom: 1rem;
+      letter-spacing: 0.15rem;
+      color: #d3071b; }
