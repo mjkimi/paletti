@@ -869,7 +869,6 @@ button#search-close {
 
 section#entertainment {
   margin-bottom: 5rem;
-  margin-top: 5rem;
   height: 100vh;
   background: url(../img/dark-section.jpg) no-repeat bottom/cover; }
 
@@ -894,3 +893,17 @@ section#entertainment {
       margin-bottom: 1rem;
       letter-spacing: 0.15rem;
       color: #d3071b; }
+
+.parallax .pimg-1,
+.parallax .pimg-2 {
+  height: 250px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat; }
+
+.parallax .pimg-1 {
+  background-image: url("../img/main2.jpg"); }
+
+.parallax .pimg-2 {
+  background-image: url("../img/overflow2.jpg"); }
