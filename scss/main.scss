@@ -454,3 +454,74 @@ section#entertainment {
     background-image: url('../img/overflow2.jpg');
   }
 }
+
+section.personalize {
+  height: 100vh;
+  background: url('../img/bg0.jpg') no-repeat center/cover;
+
+  .design-grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .mockup,
+  .your-design {
+    width: 100%;
+    margin: auto 0;
+  }
+  .column-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mockup {
+    img {
+      width: 100%;
+      max-width: 550px;
+    }
+    span {
+      color: #c69c67;
+      display: inline-block;
+      overflow: hidden;
+      font-size: 66px;
+      margin: 40px 0 0 20px;
+      white-space: nowrap;
+      transform: rotate(-15deg);
+      max-width: 500px;
+      position: absolute;
+      top: 0;
+      // max-width of the image is 550px; if it's more, then add to the left position margin of the image
+      left: calc((50vw - 550px) / 2);
+    }
+  }
+  .your-design {
+    .input-wrapper {
+      width: 70%;
+      text-align: left;
+    }
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    input {
+      width: 100%;
+      font-size: 2rem;
+      padding: 1rem 0.5rem;
+      color: #c69c67;
+      background: none;
+      border: 2px solid #c69c67;
+    }
+
+    label {
+      display: block;
+    }
+
+    button {
+      display: block;
+      margin: 2rem auto;
+    }
+  }
+}

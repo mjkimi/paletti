@@ -100,9 +100,11 @@ let autoplay = true;
 let intervalTime = 5000;
 let slideInterval;
 
-window.onload = () => {
-  document.querySelector('.slide').classList.add('current');
-};
+
+// Shutted down slider
+// window.onload = () => {
+//   document.querySelector('.slide').classList.add('current');
+// };
 
 const nextSlide = () => {
   const current = document.querySelector('.current');
