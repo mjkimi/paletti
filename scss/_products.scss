@@ -236,7 +236,7 @@
   button.clear {
     grid-area: clearCart;
     line-height: 3;
-    @include easeOut();
+    @include easeOutQuick();
     &:hover {
       color: $secondary-color;
     }

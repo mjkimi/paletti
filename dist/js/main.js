@@ -100,7 +100,6 @@ let autoplay = true;
 let intervalTime = 5000;
 let slideInterval;
 
-
 // Shutted down slider
 // window.onload = () => {
 //   document.querySelector('.slide').classList.add('current');
@@ -282,3 +281,54 @@ window.addEventListener('DOMContentLoaded', getProducts);
 input.addEventListener('input', () => searchProducts(input.value));
 
 /* End--------------Search----------------- */
+
+/* ----------------Personalize------------- */
+const inputMsg = document.querySelector('#design-input');
+const yourMsg = document.querySelector('#your-message');
+const nextBtn = document.querySelector('#next-form');
+const backBtn = document.querySelector('#previous');
+const form1 = document.querySelector('.message');
+const form2 = document.querySelector('.send-to');
+const receiver = document.querySelector('#receiver');
+
+const addToCart = document.querySelector('#add-to-cart');
+
+inputMsg.addEventListener('input', () => typeMessage(inputMsg.value));
+
+const typeMessage = text => {
+  yourMsg.innerHTML = text;
+};
+
+nextBtn.addEventListener('click', showNextForm);
+backBtn.addEventListener('click', returnPrevForm);
+
+function showNextForm() {
+  if (inputMsg.value) {
+    form1.style.display = 'none';
+    form2.style.display = 'block';
+  }
+}
+
+function returnPrevForm() {
+  form2.style.display = 'none';
+  form1.style.display = 'block';
+}
+
+addToCart.addEventListener('click', validate);
+function validate() {
+  const isValidForm = receiver.checkValidity();
+  if (!isValidForm) {
+    return false;
+    console.log(123);
+  } else {
+    //
+  }
+  // const inputsAll = [...form2.getElementsByTagName('input')];
+  // inputsAll.forEach(input => {
+  //   if (input.value.trim() !== '') {
+  //     console.log(23);
+  //   }
+  // });
+}
+
+/* End-------------Personalize------------- */

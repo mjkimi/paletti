@@ -566,7 +566,7 @@
   .cart-footer button.clear {
     grid-area: clearCart;
     line-height: 3;
-    transition: all 0.5s ease-in-out; }
+    transition: all 0.2s ease-in; }
     .cart-footer button.clear:hover {
       color: #d3071b; }
   .cart-footer button.checkout {
@@ -671,6 +671,14 @@ button {
     color: #d3071b !important;
     border-color: #e2e2e2 !important; }
   .dark-theme::before {
+    background: #fff; }
+
+.light-theme {
+  color: #fff; }
+  .light-theme:hover {
+    color: #555 !important;
+    border-color: #fff !important; }
+  .light-theme::before {
     background: #fff; }
 
 .buy-now {
@@ -936,24 +944,62 @@ section.personalize {
     margin: 40px 0 0 20px;
     white-space: nowrap;
     transform: rotate(-15deg);
-    max-width: 500px;
+    width: 500px;
+    text-align: center;
     position: absolute;
     top: 0;
     left: calc((50vw - 550px) / 2); }
-  section.personalize .your-design .input-wrapper {
-    width: 70%;
+  section.personalize .message {
+    position: absolute;
     text-align: left; }
-  section.personalize .your-design h2 {
-    margin-bottom: 2rem; }
-  section.personalize .your-design input {
-    width: 100%;
-    font-size: 2rem;
-    padding: 1rem 0.5rem;
-    color: #c69c67;
-    background: none;
-    border: 2px solid #c69c67; }
-  section.personalize .your-design label {
-    display: block; }
-  section.personalize .your-design button {
+  section.personalize .send-to {
+    position: absolute;
+    display: none;
+    width: 80%;
+    transition: all 0.5s ease-in-out; }
+    section.personalize .send-to .row {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%; }
+      section.personalize .send-to .row .half {
+        width: 48%; }
+      section.personalize .send-to .row button.back {
+        width: 30%;
+        background: transparent;
+        color: #fff;
+        font-size: 1rem;
+        border: 1px solid #fff;
+        padding: 0.5rem 0; }
+  section.personalize .input-wrapper {
+    position: relative;
+    margin-top: 2rem; }
+    section.personalize .input-wrapper .input-label {
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      display: block;
+      white-space: nowrap;
+      transition: all 0.2s ease-in; }
+    section.personalize .input-wrapper input {
+      width: 100%;
+      font-size: 1.5rem;
+      padding: 0.7rem 0.5rem;
+      color: #c69c67;
+      background: none;
+      border: 2px solid #c69c67;
+      position: relative; }
+      section.personalize .input-wrapper input:invalid {
+        box-shadow: none;
+        outline: none; }
+      section.personalize .input-wrapper input:valid + .input-label,
+      section.personalize .input-wrapper input:focus + .input-label {
+        top: -30px;
+        left: 10px;
+        font-size: 12px; }
+  section.personalize button {
+    max-width: 40%;
     display: block;
     margin: 2rem auto; }
