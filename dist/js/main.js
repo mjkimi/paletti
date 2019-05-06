@@ -289,14 +289,17 @@ const nextBtn = document.querySelector('#next-form');
 const backBtn = document.querySelector('#previous');
 const form1 = document.querySelector('.message');
 const form2 = document.querySelector('.send-to');
-const receiver = document.querySelector('#receiver');
+// const receiver = document.querySelector('#receiver');
 
-const addToCart = document.querySelector('#add-to-cart');
+// const addToCart = document.querySelector('#add-to-cart');
+
+const prompt = document.querySelector('#prompt');
 
 inputMsg.addEventListener('input', () => typeMessage(inputMsg.value));
 
 const typeMessage = text => {
   yourMsg.innerHTML = text;
+  prompt.innerHTML = '&#42; maximum 19 characters';
 };
 
 nextBtn.addEventListener('click', showNextForm);
@@ -306,29 +309,53 @@ function showNextForm() {
   if (inputMsg.value) {
     form1.style.display = 'none';
     form2.style.display = 'block';
+  } else {
+    prompt.innerHTML = '&#42; please enter your message';
   }
+  fetchCountries().then(countries => {
+    populate(countries);
+  });
 }
+
+// Countries
+function populate(countries) {
+  const select = document.querySelector('#select-country');
+  countries.forEach(country => {
+    const newOption = document.createElement('option');
+    newOption.value = `${country.code}`;
+    newOption.innerHTML = `${country.name}`;
+    select.add(newOption);
+  });
+}
+
+const fetchCountries = async () => {
+  const res = await fetch('./data/countries.json');
+  const countriesList = await res.json();
+  return countriesList;
+};
+// End countries
 
 function returnPrevForm() {
   form2.style.display = 'none';
   form1.style.display = 'block';
 }
 
-addToCart.addEventListener('click', validate);
-function validate() {
-  const isValidForm = receiver.checkValidity();
-  if (!isValidForm) {
-    return false;
-    console.log(123);
-  } else {
-    //
-  }
-  // const inputsAll = [...form2.getElementsByTagName('input')];
-  // inputsAll.forEach(input => {
-  //   if (input.value.trim() !== '') {
-  //     console.log(23);
-  //   }
-  // });
-}
+// addToCart.addEventListener('click', validate);
+// function validate() {
+//   const isValidForm = receiver.checkValidity();
+//   if (!isValidForm) {
+//     // console.log(123);
+//     return false;
+//   } else {
+//     //
+//   }
+
+// const inputsAll = [...form2.getElementsByTagName('input')];
+// inputsAll.forEach(input => {
+//   if (input.value.trim() !== '') {
+//     console.log(23);
+//   }
+// });
+// }
 
 /* End-------------Personalize------------- */

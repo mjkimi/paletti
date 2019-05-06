@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Titillium+Web:300,600");
+@import url("https://fonts.googleapis.com/css?family=Allura|Titillium+Web:300,600");
 :root {
   --blue: #1c63bc;
   --yellow: #ffdd20;
@@ -577,7 +577,7 @@
 
 body {
   color: #555;
-  font-family: 'Titillium Web', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 600;
   line-height: 1.5;
   margin: 0;
@@ -598,6 +598,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p {
   margin: 0; }
 
@@ -606,10 +607,11 @@ h2 {
   font-size: 2.2rem;
   font-weight: 400; }
 
-p {
+h5 {
   font-weight: 400; }
-  p.large {
-    font-size: 1.1rem; }
+
+p.large {
+  font-size: 1.1rem; }
 
 a {
   text-decoration: none;
@@ -918,7 +920,9 @@ section#entertainment {
 
 section.personalize {
   height: 100vh;
-  background: url("../img/bg0.jpg") no-repeat center/cover; }
+  background: url("../img/bg0.jpg") no-repeat center/cover;
+  color: #fff;
+  font-weight: 400; }
   section.personalize .design-grid {
     height: 100vh;
     display: grid;
@@ -937,21 +941,27 @@ section.personalize {
     width: 100%;
     max-width: 550px; }
   section.personalize .mockup span {
+    font-family: 'Allura', cursive, sans-serif;
     color: #c69c67;
     display: inline-block;
     overflow: hidden;
-    font-size: 66px;
+    font-size: 70px;
     margin: 40px 0 0 20px;
     white-space: nowrap;
-    transform: rotate(-15deg);
-    width: 500px;
+    transform: rotate(-13deg);
+    width: 520px;
     text-align: center;
     position: absolute;
     top: 0;
     left: calc((50vw - 550px) / 2); }
   section.personalize .message {
     position: absolute;
-    text-align: left; }
+    text-align: left;
+    width: 75%; }
+    section.personalize .message h2 {
+      text-transform: capitalize;
+      font-family: 'Allura', cursive, sans-serif;
+      font-size: 3rem; }
   section.personalize .send-to {
     position: absolute;
     display: none;
@@ -975,15 +985,18 @@ section.personalize {
     position: relative;
     margin-top: 2rem; }
     section.personalize .input-wrapper .input-label {
+      margin: 0;
       position: absolute;
-      left: 20px;
+      left: 10px;
       top: 10px;
       font-size: 1.5rem;
-      line-height: 2rem;
       display: block;
       white-space: nowrap;
+      background: #373d4d;
+      padding: 0 8px;
       transition: all 0.2s ease-in; }
-    section.personalize .input-wrapper input {
+    section.personalize .input-wrapper input,
+    section.personalize .input-wrapper select {
       width: 100%;
       font-size: 1.5rem;
       padding: 0.7rem 0.5rem;
@@ -991,13 +1004,16 @@ section.personalize {
       background: none;
       border: 2px solid #c69c67;
       position: relative; }
-      section.personalize .input-wrapper input:invalid {
+      section.personalize .input-wrapper input:invalid,
+      section.personalize .input-wrapper select:invalid {
         box-shadow: none;
         outline: none; }
       section.personalize .input-wrapper input:valid + .input-label,
-      section.personalize .input-wrapper input:focus + .input-label {
-        top: -30px;
-        left: 10px;
+      section.personalize .input-wrapper input:focus + .input-label,
+      section.personalize .input-wrapper select:valid + .input-label,
+      section.personalize .input-wrapper select:focus + .input-label {
+        top: -10px;
+        left: 20px;
         font-size: 12px; }
   section.personalize button {
     max-width: 40%;

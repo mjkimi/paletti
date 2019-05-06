@@ -34,7 +34,9 @@ class UI {
   displayProducts(products) {
     let result = '';
     products.forEach(product => {
-      result += `
+      // chechking if the id is not of personalized item
+      if (!isNaN(parseFloat(product.id))) {
+        result += `
       <article class="product" id="${product.id}">
           <div class="img-container">
             <img
@@ -55,6 +57,7 @@ class UI {
           }><span class="btn-text">Buy now</span></button>
         </article>
       `;
+      }
     });
 
     productsDOM.innerHTML = result;
@@ -65,28 +68,47 @@ class UI {
     buttonsDOM = buttons;
     buttons.forEach(button => {
       // disable if item WAS previously added to the cart
-      let id = parseInt(button.dataset.id, 10);
+      let id = button.dataset.id;
       let inCart = cart.find(item => item.id === id);
-      if (inCart) {
+      if (inCart && id !== 'personal') {
         button.disabled = true;
         button.firstElementChild.innerHTML = 'In Cart';
       }
       // disable if item IS added
       button.addEventListener('click', e => {
-        e.currentTarget.lastElementChild.innerHTML = 'In Cart';
-        e.currentTarget.disabled = true;
-        // get product from local storage
-        let cartItem = { ...Storage.getProduct(id), amount: 1 };
-        // add product to the cart
-        cart = [...cart, cartItem];
-        Storage.saveCart(cart);
-        // run cart functionality
-        const cartAdd = new Cart();
-        cartAdd.setCartValues(cart);
-        cartAdd.addCartItem(cartItem);
-        cartAdd.showCart();
+        if (id !== 'personal') {
+          e.currentTarget.lastElementChild.innerHTML = 'In Cart';
+          e.currentTarget.disabled = true;
+          this.runCartProcedure(id);
+        } else {
+          // validate personolized chocolate form
+          const isValidForm = document
+            .querySelector('#receiver')
+            .checkValidity();
+          isValidForm ? this.runCartProcedure(id) : ;
+
+          // isValidForm.firstChild.addEventListener('invalid', e => {
+          //   console.log(e);
+          //   if (e.target.validity.valueMissing) {
+          //     e.target.nextElementSibling.innerHTML = '123';
+          //   }
+          // });
+        }
       });
     });
+  }
+
+  runCartProcedure(id) {
+    // get product from local storage
+    let cartItem = { ...Storage.getProduct(id), amount: 1 };
+    // add product to the cart
+    cart = [...cart, cartItem];
+    Storage.saveCart(cart);
+    // run cart functionality
+    const cartAdd = new Cart();
+    cartAdd.setCartValues(cart);
+    cartAdd.addCartItem(cartItem);
+    cartAdd.showCart();
   }
 }
 
@@ -167,7 +189,7 @@ class Cart {
 
     cartContent.addEventListener('click', e => {
       let clickedBtn = e.target;
-      let id = parseInt(clickedBtn.dataset.id, 10);
+      let id = clickedBtn.dataset.id;
       // remove item
       if (clickedBtn.classList.contains('remove-item')) {
         clickedBtn.parentElement.classList.add('remove');
@@ -212,9 +234,11 @@ class Cart {
     cart = cart.filter(item => item.id !== id);
     this.setCartValues(cart);
     Storage.saveCart(cart);
-    let button = buttonsDOM.find(button => button.dataset.id == id);
+    let button = buttonsDOM.find(button => button.dataset.id === id);
     button.disabled = false;
-    button.firstElementChild.innerHTML = 'Buy now';
+    if (id !== 'personal') {
+      button.firstElementChild.innerHTML = 'Buy now';
+    }
   }
 }
 

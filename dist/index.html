@@ -253,7 +253,7 @@
           <div class="mockup">
             <div class="column-wrapper">
               <img src="./img/mockup.png" alt="">
-              <span id="your-message">Your Message...</span>
+              <span id="your-message">Your Message</span>
             </div>
           </div>
           <!-- <div class="your-design"> -->
@@ -261,19 +261,20 @@
               <div class="message">
                 <h2>Design Your Chocolate</h2>
                 <div class="input-wrapper">
-                  <input id="design-input" type="text" maxlength="16" required >
-                  <label for="design-input" class="input-label">Your Message&#42;</label>
-                  <h4>&#42; maximum 16 characters</h4>
+                  <input id="design-input" type="text" maxlength="19" required >
+                  <label for="design-input" class="input-label">Your Message</label>
+                  <h5 id="prompt">&#42; maximum 19 characters</h5>
                 </div>
                 <button type="button" class="btn btn-action buy-now light-theme" id="next-form"><span>Next</span></button>
               </div>
 
-              <div class="send-to">
+              <div class="send-to" >
                 <form id="receiver">
                   <h2>Send Chocolate to...</h2>
-                  <h4>Fill in receiver's shipping address.</h4>
+                  <h5>Fill in receiver's shipping address.</h5>
                   <div class="input-wrapper">
-                    <input id="name" type="text" maxlength="50" required>
+                    <input id="name" type="text" maxlength="50" required oninvalid="this.setCustomValidity('Please Enter valid email')"
+                    oninput="setCustomValidity('')" data-value-missing="Translate('Required')">
                     <label for="name" class="input-label">Full Name&#42;</label>
                   </div>
                   <div class="input-wrapper">
@@ -290,9 +291,14 @@
                       <label for="city" class="input-label">City&#42;</label>
                     </div>
                   </div>
+                  <div class="input-wrapper">
+                    <select name="countries" id="select-country" required>
+                      <option value="">Select country&#42;</option>
+                    </select>
+                  </div>
                   <div class="row">
                     <button id="previous" type="button" class="btn back"" ><span>Back</span></button>
-                    <button id="add-to-cart" type="button" class="btn btn-action buy-now light-theme"><span>Add to cart</span></button>
+                    <button id="add-to-cart" type="button" class="btn btn-action buy-now light-theme bag-btn" data-id="personal"><span>Add to cart</span></button>
                   </div>
                 </form>
               </div>
