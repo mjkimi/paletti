@@ -261,9 +261,9 @@
               <div class="message">
                 <h2>Design Your Chocolate</h2>
                 <div class="input-wrapper">
-                  <input id="design-input" type="text" maxlength="19" required >
-                  <label for="design-input" class="input-label">Your Message</label>
-                  <h5 id="prompt">&#42; maximum 19 characters</h5>
+                  <input id="design-input" type="text" maxlength="19" required autocomplete="off">
+                  <label for="design-input" class="input-label">Your Message <span class="required">&#42;</span></label>
+                  <h4><span class="required">&#42;</span> <span id="prompt"> maximum 19 characters</span></h4>
                 </div>
                 <button type="button" class="btn btn-action buy-now light-theme" id="next-form"><span>Next</span></button>
               </div>
@@ -271,31 +271,35 @@
               <div class="send-to" >
                 <form id="receiver">
                   <h2>Send Chocolate to...</h2>
-                  <h5>Fill in receiver's shipping address.</h5>
+                  <h4>Fill in receiver's shipping address.</h4>
                   <div class="input-wrapper">
-                    <input id="name" type="text" maxlength="50" required oninvalid="this.setCustomValidity('Please Enter valid email')"
-                    oninput="setCustomValidity('')" data-value-missing="Translate('Required')">
-                    <label for="name" class="input-label">Full Name&#42;</label>
+                    <input id="name" type="text" maxlength="50" required autocomplete="off">
+                    
+                    <label for="name" class="input-label">Full Name <span class="required">&#42;</span></label>
                   </div>
                   <div class="input-wrapper">
-                    <input id="address" type="text" maxlength="150" required>
-                    <label for="address" class="input-label">Address&#42;</label>
+                    <input id="address" type="text" maxlength="150" required autocomplete="off">
+                    <label for="address" class="input-label">Address <span class="required">&#42;</span></label>
                   </div>
                   <div class="row">
                     <div class="input-wrapper half">
-                      <input id="zip-code" type="text" maxlength="8" required>
-                      <label for="zip-code" class="input-label">Zip code&#42;</label>
+                      <input id="zip-code" type="text" maxlength="8" required autocomplete="off">
+                      <label for="zip-code" class="input-label">Zip code <span class="required">&#42;</span></label>
                     </div>
                     <div class="input-wrapper half">
-                      <input id="city" type="text" maxlength="20" required>
-                      <label for="city" class="input-label">City&#42;</label>
+                      <input id="city" type="text" maxlength="20" required autocomplete="off">
+                      <label for="city" class="input-label">City <span class="required">&#42;</span></label>
                     </div>
                   </div>
-                  <div class="input-wrapper">
-                    <select name="countries" id="select-country" required>
-                      <option value="">Select country&#42;</option>
-                    </select>
+                  <div class="input-wrapper countries">
+                    <label for="select">
+                      <select id="select-country" name="select" required >
+                        <option value="" selected="">Select country</option>
+                      </select>
+                    </label>
+                    <span class="required select-span">&#42;</span>
                   </div>
+                  <h4 class="required"><span class="required">&#42;</span> this is required field</h4>
                   <div class="row">
                     <button id="previous" type="button" class="btn back"" ><span>Back</span></button>
                     <button id="add-to-cart" type="button" class="btn btn-action buy-now light-theme bag-btn" data-id="personal"><span>Add to cart</span></button>

@@ -4,6 +4,7 @@
 @import 'menu';
 @import 'slider';
 @import 'products';
+@import 'personalize';
 
 * {
   box-sizing: border-box;
@@ -54,8 +55,9 @@ h2 {
   font-weight: 400;
 }
 
-h5 {
+h4 {
   font-weight: 400;
+  margin-top: 1rem;
 }
 
 p {
@@ -124,7 +126,7 @@ button {
     transform-origin: 0 0;
   }
   &:disabled {
-    color: #07d3aa;
+    color: #c69c67;
     cursor: context-menu;
   }
   > span {
@@ -177,6 +179,7 @@ header {
   z-index: 3;
   background: $bckgrd-color;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+  // box-shadow: 0 2px 1px 0 rgba(198, 156, 103, 0.5);
 
   @include easeOutQuick();
   &.hide {
@@ -469,147 +472,4 @@ section#entertainment {
   .pimg-2 {
     background-image: url('../img/overflow2.jpg');
   }
-}
-
-section.personalize {
-  height: 100vh;
-  background: url('../img/bg0.jpg') no-repeat center/cover;
-  color: $bckgrd-color;
-  font-weight: 400;
-
-  .design-grid {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .mockup,
-  .your-design {
-    width: 100%;
-    margin: auto 0;
-  }
-  .column-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .mockup {
-    img {
-      width: 100%;
-      max-width: 550px;
-    }
-    span {
-      font-family: 'Allura', cursive, sans-serif;
-      // font-weight: 600;
-      // font-size: 2rem;
-      color: #c69c67;
-      display: inline-block;
-      overflow: hidden;
-      font-size: 70px;
-      margin: 40px 0 0 20px;
-      white-space: nowrap;
-      transform: rotate(-13deg);
-      width: 520px;
-      text-align: center;
-      position: absolute;
-      top: 0;
-      // max-width of the image is 550px; if it's more, then add to the left position margin of the image
-      left: calc((50vw - 550px) / 2);
-    }
-  }
-
-  // 1st form:
-  .message {
-    // display: none;
-    position: absolute;
-    // left: 50%;
-    text-align: left;
-    width: 75%;
-    h2 {
-      text-transform: capitalize;
-      font-family: 'Allura', cursive, sans-serif;
-      font-size: 3rem;
-    }
-  }
-
-  // 2nd form:
-  .send-to {
-    // user-select: none;
-    // transform: translateX(200%);
-    position: absolute;
-    display: none;
-    width: 80%;
-    @include easeOut();
-    .row {
-      display: inline-flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      .half {
-        width: 48%;
-      }
-
-      button.back {
-        width: 30%;
-        background: transparent;
-        color: $bckgrd-color;
-        font-size: 1rem;
-        border: 1px solid $bckgrd-color;
-        padding: 0.5rem 0;
-      }
-    }
-  }
-  // end 2nd form
-
-  .input-wrapper {
-    position: relative;
-    margin-top: 2rem;
-
-    .input-label {
-      margin: 0;
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      font-size: 1.5rem;
-      // line-height: 2rem;
-      display: block;
-      white-space: nowrap;
-      background: $personalize-bg;
-      padding: 0 8px;
-      @include easeOutQuick();
-    }
-    input,
-    select {
-      width: 100%;
-      font-size: 1.5rem;
-      padding: 0.7rem 0.5rem;
-      color: #c69c67;
-      background: none;
-      border: 2px solid #c69c67;
-      position: relative;
-      &:invalid {
-        box-shadow: none;
-        outline: none;
-      }
-      &:valid + .input-label,
-      &:focus + .input-label {
-        top: -10px;
-        left: 20px;
-        font-size: 12px;
-      }
-    }
-  }
-
-  button {
-    max-width: 40%;
-    display: block;
-    margin: 2rem auto;
-  }
-
-  // .active-form {
-  //   transform: translateX(0);
-  //   display: block;
-  // }
 }

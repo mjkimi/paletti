@@ -299,18 +299,29 @@ inputMsg.addEventListener('input', () => typeMessage(inputMsg.value));
 
 const typeMessage = text => {
   yourMsg.innerHTML = text;
-  prompt.innerHTML = '&#42; maximum 19 characters';
+  prompt.innerHTML = ' maximum 19 characters';
 };
+
+// Red asterisks:
+function showError(step) {
+  step.forEach(element => (element.style.visibility = 'visible'));
+}
+function hideError(step) {
+  step.forEach(element => (element.style.visibility = 'hidden'));
+}
 
 nextBtn.addEventListener('click', showNextForm);
 backBtn.addEventListener('click', returnPrevForm);
 
 function showNextForm() {
+  const step1 = [...form1.querySelectorAll('.required')];
   if (inputMsg.value) {
+    hideError(step1);
     form1.style.display = 'none';
     form2.style.display = 'block';
   } else {
-    prompt.innerHTML = '&#42; please enter your message';
+    showError(step1);
+    prompt.innerHTML = 'please enter your message';
   }
   fetchCountries().then(countries => {
     populate(countries);
@@ -320,12 +331,15 @@ function showNextForm() {
 // Countries
 function populate(countries) {
   const select = document.querySelector('#select-country');
-  countries.forEach(country => {
-    const newOption = document.createElement('option');
-    newOption.value = `${country.code}`;
-    newOption.innerHTML = `${country.name}`;
-    select.add(newOption);
-  });
+  // check if list of countries has already been added
+  select.children.length > 1
+    ? false
+    : countries.forEach(country => {
+        const newOption = document.createElement('option');
+        newOption.value = `${country.code}`;
+        newOption.innerHTML = `${country.name}`;
+        select.add(newOption);
+      });
 }
 
 const fetchCountries = async () => {

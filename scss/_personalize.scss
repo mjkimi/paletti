@@ -1,0 +1,176 @@
+section.personalize {
+  height: 100vh;
+  background: url('../img/bg0.jpg') no-repeat center/cover;
+  color: $bckgrd-color;
+  font-weight: 400;
+
+  .design-grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .column-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    button {
+      max-width: 40%;
+      display: block;
+      margin: 2rem auto;
+    }
+  }
+
+  .mockup {
+    width: 100%;
+    margin: auto 0;
+    img {
+      width: 100%;
+      max-width: 550px;
+    }
+    span {
+      font-family: 'Allura', cursive, sans-serif;
+      color: #c69c67;
+      display: inline-block;
+      overflow: hidden;
+      font-size: 70px;
+      margin: 40px 0 0 20px;
+      white-space: nowrap;
+      transform: rotate(-13deg);
+      width: 520px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      // max-width of the image is 550px; if it's more, then add to the left position margin of the image
+      left: calc((50vw - 550px) / 2);
+    }
+  }
+
+  // 1st form:
+  .message {
+    position: absolute;
+    text-align: left;
+    width: 75%;
+
+    h2 {
+      text-transform: capitalize;
+      text-align: center;
+      font-family: 'Allura', cursive, sans-serif;
+      font-size: 3rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  // 2nd form:
+  .send-to {
+    position: absolute;
+    display: none;
+    width: 80%;
+    @include easeOut();
+
+    .row {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .half {
+        width: 48%;
+      }
+
+      button.back {
+        width: 30%;
+        background: transparent;
+        color: $bckgrd-color;
+        font-size: 1rem;
+        border: 1px solid $bckgrd-color;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+  // end 2nd form
+
+  .input-wrapper {
+    position: relative;
+    margin-top: 2rem;
+    &:hover {
+      label:after {
+        top: 1.5rem;
+      }
+    }
+
+    .input-label {
+      margin: 0;
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      font-size: 1.5rem;
+      display: block;
+      white-space: nowrap;
+      padding: 0 3px 0 8px;
+      @include easeOutQuick();
+    }
+    input,
+    select {
+      font-family: inherit;
+      width: 100%;
+      font-size: 1.5rem;
+      padding: 0.7rem 0.5rem;
+      color: $bckgrd-color;
+      background: none;
+      border: 2px solid #c69c67;
+      border-radius: 5px;
+      position: relative;
+      &:invalid {
+        box-shadow: none;
+        outline: none;
+      }
+      &:valid + .input-label,
+      &:focus + .input-label {
+        top: -10px;
+        left: 20px;
+        font-size: 12px;
+        background: $personalize-bg;
+      }
+    }
+  }
+
+  .countries {
+    position: relative;
+
+    // custom arrow on <select>:
+    label:after {
+      content: '\21A8';
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.5rem;
+      pointer-events: none;
+      @include easeOutQuick();
+    }
+
+    select#select-country {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      position: relative;
+    }
+
+    .select-span {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  .required {
+    visibility: hidden;
+  }
+
+  span.required {
+    color: $secondary-color;
+  }
+}

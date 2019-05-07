@@ -81,18 +81,20 @@ class UI {
           e.currentTarget.disabled = true;
           this.runCartProcedure(id);
         } else {
+          // select all required class
+          const step2 = [...form2.querySelectorAll('.required')];
           // validate personolized chocolate form
           const isValidForm = document
             .querySelector('#receiver')
             .checkValidity();
-          isValidForm ? this.runCartProcedure(id) : ;
+          if (isValidForm) {
+            hideError(step2);
 
-          // isValidForm.firstChild.addEventListener('invalid', e => {
-          //   console.log(e);
-          //   if (e.target.validity.valueMissing) {
-          //     e.target.nextElementSibling.innerHTML = '123';
-          //   }
-          // });
+            this.runCartProcedure(id);
+          } else {
+            showError(step2);
+            return false;
+          }
         }
       });
     });
