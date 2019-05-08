@@ -196,6 +196,10 @@ header {
     z-index: 800;
   }
 
+  // img {
+  //   height: 100%;
+  // }
+
   .column {
     width: 94%;
     margin: 0 auto;
@@ -246,9 +250,13 @@ header {
   .logo {
     position: absolute;
     left: 50%;
-    top: 1rem;
+    top: 5px;
     margin-left: -2rem;
-    display: block;
+    // display: block;
+    img {
+      // display: inline-block;
+      height: 50px;
+    }
   }
 
   #search-btn {
