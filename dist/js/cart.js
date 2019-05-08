@@ -34,7 +34,7 @@ class UI {
   displayProducts(products) {
     let result = '';
     products.forEach(product => {
-      // chechking if the id is not of personalized item
+      // checking if the id is not of personalized item
       if (!isNaN(parseFloat(product.id))) {
         result += `
       <article class="product" id="${product.id}">
@@ -46,15 +46,19 @@ class UI {
             />
           </div>
           <div class="title-wrapper">
-          <h3>${product.title}</h3>
+            <span>Paletti</span>
+            <h3>${product.title}</h3>
           </div>
           <div class="description-wrapper">
-          <p>${product.description}</p>
+            <span>${product.weight}</span>
+            <p>${product.description}</p>
           </div>
-          <h4>$${product.price}</h4>
-          <button type="button" class="btn btn-action buy-now bag-btn" data-id=${
-            product.id
-          }><span class="btn-text">Buy now</span></button>
+          <div class="booking">
+            <strong><span>$${product.price}</span></strong>
+            <button type="button" class="btn btn-action buy-now bag-btn" data-id=${
+              product.id
+            }><span class="btn-text">Buy now</span></button>
+          </div>
         </article>
       `;
       }

@@ -403,7 +403,8 @@
       margin-bottom: 2rem; }
 
 .showcase-wrapeer {
-  width: 100vw; }
+  width: 100vw;
+  font-size: 14px; }
   .showcase-wrapeer .products-center {
     width: 90%;
     margin: 0 auto;
@@ -415,32 +416,37 @@
 
 .product-img {
   display: block;
-  width: 100%;
-  transition: var(--mainTransition);
-  transform: scale(1);
-  transition: all 0.2s ease-in; }
-
-.img-container:hover .product-img {
-  transform: scale(1.1); }
+  width: 100%; }
 
 .product {
   min-height: 300px;
   text-align: left;
-  border-left: 1px solid #f5f5f5; }
+  border: 1px solid #f5f5f5;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: all 0.2s ease-in; }
+  .product:hover {
+    background: #f5f5f5; }
   .product .title-wrapper {
-    min-height: 53px; }
+    min-height: 70px; }
     .product .title-wrapper h3 {
       text-transform: uppercase;
-      font-size: 1.1rem;
-      margin-top: 1rem; }
+      font-size: 1.1rem; }
   .product .description-wrapper {
-    min-height: 73px; }
-  .product h4 {
-    font-weight: 600;
-    color: #000;
-    margin-top: 0.5rem; }
-  .product button {
-    width: 100%; }
+    min-height: 90px;
+    margin: 1rem 0; }
+  .product .booking {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center; }
+    .product .booking strong {
+      grid-column: 1;
+      font-weight: 600;
+      color: #000; }
+    .product .booking button {
+      grid-column: 2/4;
+      width: 100%; }
 
 .cart {
   z-index: 1501;
@@ -709,7 +715,7 @@ section.personalize {
 body {
   color: #555;
   font-family: 'Titillium Web', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -770,7 +776,7 @@ button {
   position: relative;
   display: inline-block;
   line-height: 3;
-  background: none;
+  background: #fff;
   border: 1px solid #e2e2e2;
   border-radius: 2px;
   transition: color 0.2s ease, border 0.2s ease;

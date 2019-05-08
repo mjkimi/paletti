@@ -1,72 +1,81 @@
 [
   {
     "id": "1",
-    "title": "Milk Chocolate 200g",
+    "title": "Milk Chocolate",
     "description": "The luxurious taste of milk chocolate is the perfect accompaniment to any moment.",
+    "weight": "200g",
     "price": 2.61,
     "image": "img/products/milk.jpg",
     "color": "blue"
   },
   {
     "id": "2",
-    "title": "Chopped hazelnuts in milk chocolate 200g",
+    "title": "Chopped hazelnuts in milk chocolate",
     "description": "Milk chocolate and chopped hazelnuts - a scrumptious combination of two flavors. ",
+    "weight": "200g",
     "price": 2.66,
     "image": "img/products/hazelnuts.jpg",
     "color": "yellow"
   },
   {
     "id": "3",
-    "title": "Orange in dark chocolate 200g",
+    "title": "Orange in dark chocolate",
     "description": "A full-bodied combination of smooth dark chocolate and tangy orange.",
+    "weight": "200g",
     "price": 2.66,
     "image": "img/products/orange.jpg",
     "color": "orange, brown"
   },
   {
     "id": "4",
-    "title": "Raisin and hazelnuts 200g",
+    "title": "Raisin and hazelnuts",
     "description": "A traditional combination of milk chocolate, nuts and raisins.",
+    "weight": "200g",
     "price": 2.66,
     "image": "img/products/raisin_hazelnuts.jpg",
     "color": "violet, purple"
   },
   {
     "id": "5",
-    "title": "Vanilla in milk chocolate 190g",
+    "title": "Vanilla in milk chocolate",
     "description": "The yummy mix of milk chocolate and natural vanilla.",
+    "weight": "190g",
     "price": 2.66,
     "image": "img/products/vanilla.jpg",
     "color": "pink"
   },
   {
     "id": "6",
-    "title": "Peppermint in milk chocolate 200g",
+    "title": "Peppermint in milk chocolate",
     "description": "A refreshing combination of milk chocolate and peppermint crunch.",
+    "weight": "200g",
     "price": 2.66,
     "image": "img/products/peppermint.jpg",
     "color": "red"
   },
   {
     "id": "7",
-    "title": "Lime & Mint in dark chocolate 190g",
+    "title": "Lime & Mint in dark chocolate",
     "description": "Dark chocolate is now accompanied by delicious combination of grounded mint and lime juice.",
+    "weight": "190g",
     "price": 2.66,
     "image": "img/products/lime_mint.jpg",
     "color": "green"
   },
   {
     "id": "8",
-    "title": "47% Dark chocolate 200g",
+    "title": "47% Dark chocolate",
     "description": "This smooth, mouthwatering dark chocolate is bursting with cocoa flavor.",
+    "weight": "200g",
     "price": 2.71,
     "image": "img/products/dark.jpg",
     "color": "light-blue"
   },
   {
     "id": "personal",
-    "title": "Design and send Paletti milk chocolate piece 200g",
+    "title": "Design and send Paletti milk chocolate piece",
     "description": "This smooth, mouthwatering dark chocolate is bursting with cocoa flavor.",
+    "weight": "200g",
     "price": 12.99,
     "image": "img/products/dark.jpg",
     "color": "light-blue"

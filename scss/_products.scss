@@ -27,12 +27,12 @@
 
 .showcase-wrapeer {
   width: 100vw;
+  font-size: 14px;
   .products-center {
     width: 90%;
     margin: 0 auto;
     max-width: 1170px;
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-column-gap: 2rem;
     grid-row-gap: 3rem;
@@ -42,39 +42,52 @@
 .product-img {
   display: block;
   width: 100%;
-  transition: var(--mainTransition);
-  transform: scale(1);
-  @include easeOutQuick();
+  // transition: var(--mainTransition);
+  // transform: scale(1);
+  // @include easeOutQuick();
 }
-.img-container:hover .product-img {
-  transform: scale(1.1);
-}
+// .img-container:hover .product-img {
+//   transform: scale(1.1);
+// }
 
 .product {
   min-height: 300px;
   text-align: left;
-  // border: 2px solid #c69c67;
-  // border-radius: 5px;
-  border-left: 1px solid #f5f5f5;
+  border: 1px solid #f5f5f5;
+  padding: 1rem;
+  border-radius: 10px;
+  @include easeOutQuick();
+  &:hover {
+    background: #f5f5f5;
+  }
   .title-wrapper {
-    min-height: 53px;
+    min-height: 70px;
     h3 {
       text-transform: uppercase;
       font-size: 1.1rem;
-      margin-top: 1rem;
+      // margin-top: 1rem;
     }
   }
   .description-wrapper {
-    min-height: 73px;
+    min-height: 90px;
+    margin: 1rem 0;
   }
 
-  h4 {
-    font-weight: 600;
-    color: #000;
-    margin-top: 0.5rem;
-  }
-  button {
-    width: 100%;
+  .booking {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    strong {
+      grid-column: 1;
+      font-weight: 600;
+      color: #000;
+      // margin-top: 0.5rem;
+    }
+    button {
+      grid-column: 2/4;
+      width: 100%;
+    }
   }
 }
 
