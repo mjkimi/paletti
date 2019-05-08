@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Allura|Titillium+Web:300,600');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500|Allura|Titillium+Web:300,600');
 // @import url('https://fonts.googleapis.com/css?family=Allura|Open+Sans:400,600');
 @import 'config';
 @import 'signin';
@@ -149,6 +149,7 @@ button {
 
 .light-theme {
   color: $bckgrd-color;
+  background: transparent;
   &:hover {
     color: $primary-color !important;
     border-color: $bckgrd-color !important;
@@ -171,6 +172,8 @@ header {
 
 .header-wrapper {
   // visibility: hidden;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   width: 100vw;
   position: fixed;
   height: 60px;

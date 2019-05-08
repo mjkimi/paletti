@@ -29,6 +29,28 @@
     transform: scale(1.15);
     transition: transform 3s $cubic-bezier, opacity 1s ease;
   }
+
+  .light-module {
+    color: $bckgrd-color;
+    // justify-content: flex-end;
+    line-height: 1.2;
+    // text-align: right;
+    align-items: flex-end;
+    // justify-content: flex-end;
+    h3 {
+      // justify-content: flex-end;
+
+      font-family: 'Allura', cursive, sans-serif;
+      font-weight: 300;
+      font-size: 2rem;
+      text-align: right;
+    }
+    p {
+      font-size: 3rem;
+      text-transform: uppercase;
+      margin: 0 0 2rem;
+    }
+  }
 }
 
 .slider .side-module {
@@ -36,13 +58,14 @@
   right: 0;
   top: 0;
   min-width: 250px;
-  max-width: 30%;
+  max-width: 45%;
   height: 100%;
   margin: 0 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  // text-align: left;
   opacity: 0;
   transform: translate3d(-10%, 0, 0);
   transition: all 1s ease;
