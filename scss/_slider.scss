@@ -30,23 +30,32 @@
     transition: transform 3s $cubic-bezier, opacity 1s ease;
   }
 
+  a {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .color-module {
+    h3 {
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+  }
+
   .light-module {
     color: $bckgrd-color;
-    // justify-content: flex-end;
     line-height: 1.2;
-    // text-align: right;
     align-items: flex-end;
-    // justify-content: flex-end;
     h3 {
-      // justify-content: flex-end;
-
       font-family: 'Allura', cursive, sans-serif;
-      font-weight: 300;
+      font-weight: normal;
       font-size: 2rem;
-      text-align: right;
     }
     p {
-      font-size: 3rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
       text-transform: uppercase;
       margin: 0 0 2rem;
     }
@@ -88,14 +97,17 @@
 }
 
 .slider-control {
+  // background: #fff;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   margin-left: auto;
   margin-right: auto;
   bottom: 0;
   left: 0;
   right: 0;
   text-align: center;
+  // z-index: 100000;
+
   .arrow #control {
     position: absolute;
     bottom: 0;
@@ -103,12 +115,37 @@
   }
 }
 
+.skew-bg {
+  position: relative;
+  &::after,
+  &::before {
+    position: absolute;
+    content: '';
+    width: 82px;
+    height: 65px;
+    background: $bckgrd-color;
+    z-index: 1;
+    top: -22px;
+    // border-radius: 5px;
+  }
+  &::before {
+    transform: skew(-50deg);
+    right: 50%;
+    // background: yellow;
+  }
+  &::after {
+    transform: skew(50deg);
+    left: 50%;
+  }
+}
+
 .arrow {
+  // z-index: 100000;
   background: transparent;
   border: none;
   color: $primary-color;
   cursor: pointer;
-  padding: 10px;
+  padding: 10px 10px 0;
   font-size: 1rem;
   @include easeOut();
   &:hover {
@@ -122,6 +159,7 @@
   // overflow: hidden;
   height: 80px;
   position: relative;
+  // z-index: 0;
   i {
     top: 50%;
     left: 50%;

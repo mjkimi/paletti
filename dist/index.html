@@ -151,21 +151,24 @@
           <div class="slider">
             <div class="slide ">
               <img src="./img/main/Chocolate.jpg" alt="Chocolate pieces"  class="main-slide">
-              <div class="side-module">
+              <div class="side-module color-module">
                 <img src="./img/main/Paletti.png" alt="Three tastes of Paletti">
                 <h3>Shop Paletti products online</h3>
-                <button type="button" class="btn btn-action buy-now"><span>Buy now</span></button>
+                <a href="#shop">
+                  <button type="button" class="btn btn-action buy-now"><span>Buy now</span></button>
+                </a>
               </div>
             </div>
 
             <div class="slide">
               <img src="./img/main/Personal_chocolate.jpg" alt="Chocolate letter" class="main-slide">
               <div class="side-module light-module">
-                <!-- <img src="./img/main/Paletti.png" alt=""> -->
                 <h3>Design your own</h3>
                 <p>Chocolate letter</p>
-                <button type="button" class="btn btn-action buy-now light-theme"><span>Say it with chocolate</span>
-                </button>
+                <a href="#personalize">
+                  <button type="button" class="btn btn-action buy-now light-theme"><span>Say it with chocolate</span>
+                  </button>
+              </a>
               </div>
             </div>
 
@@ -176,6 +179,7 @@
               <button class="arrow" id="prev" type="button"><i class="fas fa-angle-double-left"></i></button>
               <button class="arrow" id="next" type="button"><i class="fas fa-angle-double-right"></i></button>
             </div>
+            <div class="skew-bg"></div>
         </div>
         <a href="#shop" class="arrow section-scroll">
           <i class="fas fa-angle-double-down"></i>
@@ -195,6 +199,29 @@
             <!--Products to buy are inserted here from JSON// -->
           </div>
         </div>
+         
+        <div class="section" id="grid">
+            <div class="section-container">
+              <div class="gift-cards">
+                <div>
+                  <img src="./img/delivery-2.jpg" alt="">
+                </div>
+                <div class="description">
+                  <h2>Original packaging</h2>
+                  <p class="large">For those who orders full palette of our tastes, chocolate bars will be packaged in a special designed little box for  satisfying your most demanding gift requirements.</p>
+                </div>
+                <div class="description">
+                  <h2>Express Next Day Delivery</h2>
+                  <p class="large">Your parcel will be delivered within 1–2 working days of it leaving the Paletti warehouse. Once your parcel is packed and ready to leave our warehouse, you will receive a shipping confirmation email with a link to your shipment status. You can track your shipment online anytime.</p>
+                </div>
+                <div>
+                  <img src="./img/balloon.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+       
+
         <!-- Parallax -->
         <div class="parallax">
           
@@ -225,32 +252,9 @@
         <!-- //cart -->
       </section>
       <!-- // Products -->
-      <!-- Entertainment //-->
-      <section id="entertainment" class="section">
-      </section>
      
-      <!-- // Entertainment -->
-      <div class="section" id="grid">
-        <div class="section-container">
-          <div class="gift-cards">
-            <div>
-              <img src="./img/delivery-2.jpg" alt="">
-            </div>
-            <div class="description">
-              <h2>Original packaging</h2>
-              <p class="large">For those who orders full palette of our tastes, chocolate bars will be packaged in a special designed little box for  satisfying your most demanding gift requirements.</p>
-            </div>
-            <div class="description">
-              <h2>Express Next Day Delivery</h2>
-              <p class="large">Your parcel will be delivered within 1–2 working days of it leaving the Paletti warehouse. Once your parcel is packed and ready to leave our warehouse, you will receive a shipping confirmation email with a link to your shipment status. You can track your shipment online anytime.</p>
-            </div>
-            <div>
-              <img src="./img/balloon.jpg" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-      <section class="personalize">
+      
+      <section class="personalize" id="personalize">
         <div class="design-grid">
           <div class="mockup">
             <div class="column-wrapper">
@@ -312,6 +316,23 @@
           </div>
         </div>
       </section>
+      <!-- history //-->
+      <section id="history" class="section">
+          <div class="history-wrapper">
+              <div class="one">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis molestiae libero fugiat sequi non veritatis! Quisquam fuga recusandae quam consectetur ipsam error optio culpa alias.</p>
+                
+              </div>
+              <!-- <div class="two">
+                
+              </div> -->
+              <div class="three">
+                  <img src="./img/main/Stamp.png" alt="">
+              </div>
+          </div>
+          
+        </section>
     </main>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="js/cart.js"></script>

@@ -176,7 +176,7 @@ window.onscroll = function() {
 };
 // Smooth scroll effect (3d party cdn)
 const scroll = new SmoothScroll(' a[href*="#"]', {
-  speed: 800
+  speed: 400
 });
 
 /* ------------- Search --------------- */
