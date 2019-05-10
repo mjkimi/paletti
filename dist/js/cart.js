@@ -161,11 +161,13 @@ class Cart {
   }
 
   showCart() {
-    dark.classList.add('show', 'cart-overlay');
+    showDarkOverlay();
+    dark.classList.add('cart-overlay');
     cartDOM.classList.add('showCart');
   }
   hideCart() {
-    dark.classList.remove('show', 'cart-overlay');
+    hideDarkOverlay();
+    dark.classList.remove('cart-overlay');
     cartDOM.classList.remove('showCart');
   }
 

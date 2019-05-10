@@ -287,9 +287,19 @@ header {
       @include easeOut;
       &:not(:last-child):hover {
         color: $secondary-color;
+        img {
+          filter: invert(27%) sepia(97%) saturate(5159%) hue-rotate(344deg)
+            brightness(78%) contrast(116%);
+        }
       }
       &.my {
+        // background: #000;
         margin: 0 20px;
+        span .typo {
+          font-family: 'Allura', cursive, sans-serif;
+          font-weight: bold;
+          font-size: 22px;
+        }
       }
     }
   }
@@ -301,8 +311,6 @@ header {
   left: 0;
   top: 60px;
   width: 100%;
-  // text-align: center;
-
   opacity: 1;
   transform: translateY(0%);
   height: auto;
@@ -399,6 +407,7 @@ header {
 }
 
 button#search-close {
+  background: $bckgrd-color;
   position: absolute;
   top: 0;
   right: 0;
@@ -451,12 +460,9 @@ section#history {
     height: 100%;
     display: grid;
     grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
-    // grid-template-areas: 'one three';
-    // justify-content: center;
     align-items: start;
     align-content: start;
     .one {
-      // grid-area: one;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -466,11 +472,9 @@ section#history {
     }
 
     .three {
-      // grid-area: three;
       height: 100%;
       background: url('../img/main/Old_building1.jpg') no-repeat center/contain;
       position: relative;
-      // align-items: center;
       img {
         width: 150px;
         position: absolute;

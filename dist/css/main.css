@@ -951,8 +951,14 @@ header {
       transition: all 0.5s ease-in-out; }
       .header-sticky .header-menu-right ul li.header-menu-item:not(:last-child):hover {
         color: #d3071b; }
+        .header-sticky .header-menu-right ul li.header-menu-item:not(:last-child):hover img {
+          filter: invert(27%) sepia(97%) saturate(5159%) hue-rotate(344deg) brightness(78%) contrast(116%); }
       .header-sticky .header-menu-right ul li.header-menu-item.my {
         margin: 0 20px; }
+        .header-sticky .header-menu-right ul li.header-menu-item.my span .typo {
+          font-family: 'Allura', cursive, sans-serif;
+          font-weight: bold;
+          font-size: 22px; }
 
 .header-search {
   position: absolute;
@@ -1033,6 +1039,7 @@ header {
         display: inline-block; }
 
 button#search-close {
+  background: #fff;
   position: absolute;
   top: 0;
   right: 0;

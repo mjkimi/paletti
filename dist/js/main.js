@@ -70,10 +70,17 @@ menuBtn.addEventListener('click', toggleMenu);
 function toggleMenu() {
   closeBtn.classList.remove('closed');
   sideMenu.classList.add('show');
-  dark.classList.add('show');
+  showDarkOverlay();
   header.classList.add('close');
-  // document.querySelector('.container').style.overflow = 'hidden';
+}
+
+function showDarkOverlay() {
+  dark.classList.add('show');
   body.classList.add('modal-opened');
+}
+function hideDarkOverlay() {
+  dark.classList.remove('show');
+  body.classList.remove('modal-opened');
 }
 
 closeBtn.addEventListener('click', closeMenu);
@@ -82,8 +89,6 @@ function closeMenu() {
   dark.classList.remove('show');
   sideMenu.classList.remove('show');
   header.classList.remove('close');
-  body.classList.remove('modal-opened');
-  // document.querySelector('.container').style.overflowY = 'scroll';
 }
 dark.addEventListener('click', closeMenu);
 sideMenu.addEventListener('click', closeMenu);
@@ -190,7 +195,7 @@ searchBtn.addEventListener('click', showSearchForm);
 function showSearchForm() {
   searchHeader.classList.remove('header-search-closed');
   closeSearchBtn.classList.add('activated');
-  dark.classList.add('show');
+  showDarkOverlay();
   searchHeader.ontransitionend = () => {
     closeSearch();
   };
@@ -209,7 +214,7 @@ function hideInput() {
 function hideSearchForm() {
   searchHeader.classList.add('header-search-closed');
   closeSearchBtn.classList.remove('activated');
-  dark.classList.remove('show');
+  hideDarkOverlay();
   hideInput();
 }
 
