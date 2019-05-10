@@ -441,6 +441,8 @@
       word-spacing: 0.5rem; }
     .module-wrapper .shop-title p {
       margin-bottom: 2rem; }
+      .module-wrapper .shop-title p span {
+        text-transform: uppercase; }
 
 .showcase-wrapeer {
   width: 100vw;
@@ -1106,19 +1108,19 @@ section#history {
   width: 80%;
   margin: 0 auto; }
 
-.gift-cards {
+.for-customers {
   display: grid;
   grid-column-gap: 2rem;
   grid-row-gap: 5rem;
   grid-template-columns: 1fr 1fr; }
-  .gift-cards img {
+  .for-customers img {
     max-width: 100%; }
-  .gift-cards .description {
+  .for-customers .description {
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center; }
-    .gift-cards .description h2 {
+    .for-customers .description h2 {
       margin-bottom: 1rem;
       letter-spacing: 0.15rem;
       color: #d3071b; }

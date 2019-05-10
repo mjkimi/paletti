@@ -86,7 +86,8 @@ function hideDarkOverlay() {
 closeBtn.addEventListener('click', closeMenu);
 function closeMenu() {
   closeBtn.classList.add('closed');
-  dark.classList.remove('show');
+  hideDarkOverlay();
+  // dark.classList.remove('show');
   sideMenu.classList.remove('show');
   header.classList.remove('close');
 }
