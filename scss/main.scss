@@ -54,7 +54,13 @@ h2 {
   text-transform: uppercase;
   font-size: 2.2rem;
   font-weight: 400;
-  // color: $secondary-color;
+}
+
+h2.headline {
+  color: $secondary-color;
+  letter-spacing: $letter-spacing;
+  margin-bottom: 1rem;
+  word-spacing: $word-spacing;
 }
 
 h4 {
@@ -504,11 +510,6 @@ section#history {
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    h2 {
-      margin-bottom: 1rem;
-      letter-spacing: $letter-spacing;
-      color: $secondary-color;
-    }
   }
 }
 

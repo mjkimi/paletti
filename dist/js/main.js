@@ -1,4 +1,4 @@
-// scope with IIFE for whole document to avoid polluting the global namespace
+//  IIFE scope for whole document to avoid polluting global namespace
 
 (() => {
   /*-------------Retrieving products' data------------------*/
