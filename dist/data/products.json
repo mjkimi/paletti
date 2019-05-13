@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "title": "Milk Chocolate",
+    "title": "Milk chocolate",
     "description": "The luxurious taste of milk chocolate is the perfect accompaniment to any moment.",
     "weight": "200g",
     "price": 2.61,
@@ -73,11 +73,11 @@
   },
   {
     "id": "personal",
-    "title": "Design and send Paletti milk chocolate piece",
+    "title": "Your designed chocolate letter",
     "description": "This smooth, mouthwatering dark chocolate is bursting with cocoa flavor.",
     "weight": "200g",
     "price": 12.99,
-    "image": "img/products/dark.jpg",
-    "color": "light-blue"
+    "image": "img/products/designed.jpg",
+    "color": "blue"
   }
 ]

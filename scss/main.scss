@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500|Allura|Titillium+Web:300,600');
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush|Montserrat:500|Allura|Titillium+Web:300,600');
 // @import url('https://fonts.googleapis.com/css?family=Allura|Open+Sans:400,600');
 @import 'config';
 @import 'signin';
@@ -151,7 +151,7 @@ button {
   background: $dark-blue;
   color: $bckgrd-color;
   &:hover {
-    color: $secondary-color !important;
+    color: $dark-blue !important;
     border-color: $gray-border-color !important;
   }
   &::before {
@@ -197,7 +197,7 @@ header {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
   // box-shadow: 0 2px 1px 0 rgba(198, 156, 103, 0.5);
 
-  @include easeOutQuick();
+  @include easeOut();
   &.hide {
     top: -100%;
   }
@@ -453,13 +453,15 @@ button#search-close {
 
 // history
 section#history {
-  width: 90%;
-  margin: 0 auto 5rem;
+  width: 80%;
+  margin: 4rem auto;
   height: 50%;
-  // text-align: center;
   h2 {
     text-align: center;
+    margin-bottom: 2rem;
+    // font-family: 'Montserrat', sans-serif;
   }
+
   .history-wrapper {
     grid-column-gap: 2rem;
     grid-row-gap: 5rem;
@@ -494,14 +496,14 @@ section#history {
 .section-container {
   max-width: 1180px;
   width: 80%;
-  margin: 0 auto;
+  margin: 4rem auto;
 }
 
 .for-customers {
   display: grid;
   grid-column-gap: 2rem;
   grid-row-gap: 5rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 48% 48%;
   img {
     max-width: 100%;
   }
@@ -510,6 +512,9 @@ section#history {
     flex-direction: column;
     align-items: left;
     justify-content: center;
+    // font-family: 'Montserrat', sans-serif;
+    // color: #555;
+    // font-weight: ;
   }
 }
 
@@ -517,7 +522,7 @@ section#history {
 .parallax {
   .pimg-1,
   .pimg-2 {
-    height: 250px;
+    height: 350px;
     background-attachment: fixed;
     background-position: center;
     background-size: 70%;

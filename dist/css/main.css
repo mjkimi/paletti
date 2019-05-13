@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500|Allura|Titillium+Web:300,600");
+@import url("https://fonts.googleapis.com/css?family=Alex+Brush|Montserrat:500|Allura|Titillium+Web:300,600");
 :root {
   --blue: #1c63bc;
   --yellow: #ffdd20;
@@ -470,7 +470,7 @@
       text-transform: uppercase;
       font-size: 1.1rem; }
   .product .description-wrapper {
-    min-height: 90px;
+    min-height: 120px;
     margin: 1rem 0; }
   .product .booking {
     display: grid;
@@ -605,8 +605,9 @@
   color: #343f6e; }
   .cart-footer h3 {
     grid-area: total; }
-  .cart-footer span {
-    grid-area: sum; }
+  .cart-footer span.cart-total {
+    grid-area: sum;
+    font-weight: 600; }
   .cart-footer button.clear {
     grid-area: clearCart;
     line-height: 3;
@@ -856,7 +857,7 @@ button {
   background: #343f6e;
   color: #fff; }
   .dark-theme:hover {
-    color: #d3071b !important;
+    color: #343f6e !important;
     border-color: #e2e2e2 !important; }
   .dark-theme::before {
     background: #fff; }
@@ -890,7 +891,7 @@ header {
   z-index: 3;
   background: #fff;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
-  transition: all 0.2s ease-in; }
+  transition: all 0.5s ease-in-out; }
   .header-wrapper.hide {
     top: -100%; }
 
@@ -1075,11 +1076,12 @@ button#search-close {
     color: #fff; }
 
 section#history {
-  width: 90%;
-  margin: 0 auto 5rem;
+  width: 80%;
+  margin: 4rem auto;
   height: 50%; }
   section#history h2 {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 2rem; }
   section#history .history-wrapper {
     grid-column-gap: 2rem;
     grid-row-gap: 5rem;
@@ -1107,13 +1109,13 @@ section#history {
 .section-container {
   max-width: 1180px;
   width: 80%;
-  margin: 0 auto; }
+  margin: 4rem auto; }
 
 .for-customers {
   display: grid;
   grid-column-gap: 2rem;
   grid-row-gap: 5rem;
-  grid-template-columns: 1fr 1fr; }
+  grid-template-columns: 48% 48%; }
   .for-customers img {
     max-width: 100%; }
   .for-customers .description {
@@ -1124,7 +1126,7 @@ section#history {
 
 .parallax .pimg-1,
 .parallax .pimg-2 {
-  height: 250px;
+  height: 350px;
   background-attachment: fixed;
   background-position: center;
   background-size: 70%;
