@@ -31,12 +31,37 @@
   class PageScroll {
     scrollControl() {
       window.onscroll = () => {
-        // show-hide sticky header
+        // -> show-hide sticky header
+
         let currentScrollPos = window.pageYOffset;
         prevScrollPos > currentScrollPos
           ? headerWrap.classList.remove('hide')
           : headerWrap.classList.add('hide');
         prevScrollPos = currentScrollPos;
+
+        const windowHeight = window.innerHeight;
+
+        // -> -> "parallax" of landing chocolates
+        // relative position of products' center to the viewport, i.e. the window:
+        let top = productsDOM.getBoundingClientRect().top;
+
+        if (currentScrollPos > top - windowHeight / 2) {
+          const allArticles = document.querySelectorAll('.product');
+          allArticles.forEach((article, i) => {
+            setTimeout(() => {
+              article.classList.add('is-showing');
+            }, 150 * (i + 1));
+          });
+        }
+
+        // -> "parallax" of Info, Packaging & Delivery section
+        const infoGrid = document.querySelectorAll('.from-center');
+        infoGrid.forEach(div => {
+          let positionFromTop = div.getBoundingClientRect().top;
+          if (positionFromTop - windowHeight <= 0) {
+            div.classList.add('fade-in');
+          }
+        });
       };
 
       // smooth scroll effect (3d party cdn)

@@ -504,17 +504,36 @@ section#history {
   grid-column-gap: 2rem;
   grid-row-gap: 5rem;
   grid-template-columns: 48% 48%;
+
   img {
     max-width: 100%;
+    display: block;
   }
   .description {
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    // font-family: 'Montserrat', sans-serif;
-    // color: #555;
-    // font-weight: ;
+    z-index: -1;
+  }
+}
+
+.from-center {
+  position: relative;
+  // opacity: 0;
+  &:nth-of-type(odd) {
+    transform: translate3d(20%, 10%, 0);
+    // @include easeOut();
+    transition: opacity 0.2s linear, transform 0.5s ease-in-out 0.1s;
+  }
+  &:nth-of-type(even) {
+    transform: translate3d(-20%, 10%, 0);
+    // @include easeOut();
+    transition: opacity 0.2s linear, transform 0.5s ease-in-out 0.1s;
+  }
+  &.fade-in {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) !important;
   }
 }
 
