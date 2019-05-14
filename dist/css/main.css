@@ -464,7 +464,7 @@
   border: 1px solid #f5f5f5;
   padding: 1rem;
   border-radius: 10px;
-  transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1), transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s ease-in-out; }
+  transition: opacity cubic-bezier(0.62, 0.28, 0.23, 0.99) 0.4s, transform cubic-bezier(0.62, 0.28, 0.23, 0.99) 0.3s, background-color ease-in-out 0.3s; }
   .product.is-showing {
     transform: translate3d(0, 0, 0);
     opacity: 1; }
@@ -1133,13 +1133,14 @@ section#history {
     z-index: -1; }
 
 .from-center {
-  position: relative; }
+  position: relative;
+  opacity: 0; }
   .from-center:nth-of-type(odd) {
     transform: translate3d(20%, 10%, 0);
-    transition: opacity 0.2s linear, transform 0.5s ease-in-out 0.1s; }
+    transition: all cubic-bezier(0.1, 0.59, 0.3, 0.38) 0.7s; }
   .from-center:nth-of-type(even) {
     transform: translate3d(-20%, 10%, 0);
-    transition: opacity 0.2s linear, transform 0.5s ease-in-out 0.1s; }
+    transition: all cubic-bezier(0.1, 0.59, 0.3, 0.38) 0.7s; }
   .from-center.fade-in {
     opacity: 1;
     transform: translate3d(0, 0, 0) !important; }

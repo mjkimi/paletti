@@ -520,20 +520,18 @@ section#history {
 
 .from-center {
   position: relative;
-  // opacity: 0;
+  opacity: 0;
   &:nth-of-type(odd) {
     transform: translate3d(20%, 10%, 0);
-    // @include easeOut();
-    transition: opacity 0.2s linear, transform 0.5s ease-in-out 0.1s;
+    transition: all cubic-bezier(0.1, 0.59, 0.3, 0.38) 0.7s;
   }
   &:nth-of-type(even) {
     transform: translate3d(-20%, 10%, 0);
-    // @include easeOut();
-    transition: opacity 0.2s linear, transform 0.5s ease-in-out 0.1s;
+    transition: all cubic-bezier(0.1, 0.59, 0.3, 0.38) 0.7s;
   }
   &.fade-in {
     opacity: 1;
-    transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important ;
   }
 }
 
