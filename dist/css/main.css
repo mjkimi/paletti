@@ -808,7 +808,15 @@ section.personalize {
     .slider .side-module.light-module {
       align-items: center; }
       .slider .side-module.light-module a {
-        width: 100%; } }
+        width: 100%; }
+  #grid .for-customers {
+    grid-template-columns: 1fr; }
+    #grid .for-customers :nth-child(3) {
+      grid-row: 4; }
+  section#history .history-wrapper {
+    grid-template-columns: 1fr; }
+    section#history .history-wrapper :nth-child(2) {
+      grid-row: 1; } }
 
 @media screen and (max-width: 550px) {
   .slider .side-module {
@@ -1148,36 +1156,30 @@ button#search-close {
     border-radius: 50%;
     color: #fff; }
 
-section#history {
+section.history {
   width: 80%;
   margin: 4rem auto;
   height: 50%; }
-  section#history h2 {
+  section.history h2 {
     text-align: center;
     margin-bottom: 2rem; }
-  section#history .history-wrapper {
+  section.history .history-wrapper {
     grid-column-gap: 2rem;
-    grid-row-gap: 5rem;
     height: 100%;
     display: grid;
     grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
     align-items: start;
     align-content: start; }
-    section#history .history-wrapper .one {
+    section.history .history-wrapper .history-text {
       display: flex;
       flex-direction: column;
       justify-content: center; }
-      section#history .history-wrapper .one .signature img {
+      section.history .history-wrapper .history-text .signature img {
         max-width: 200px; }
-    section#history .history-wrapper .three {
-      height: 100%;
-      background: url("../img/main/Old_building1.jpg") no-repeat center/contain;
-      position: relative; }
-      section#history .history-wrapper .three img {
-        width: 150px;
-        position: absolute;
-        top: 0;
-        left: -50px; }
+    section.history .history-wrapper .history-img {
+      margin: auto 0; }
+      section.history .history-wrapper .history-img img {
+        max-width: 100%; }
 
 .section-container {
   max-width: 1180px;
@@ -1189,9 +1191,12 @@ section#history {
   grid-column-gap: 2rem;
   grid-row-gap: 5rem;
   grid-template-columns: 48% 48%; }
+  .for-customers grid-item:nth-child(4) {
+    order: 3; }
+  .for-customers grid-item:nth-child(3) {
+    order: 4; }
   .for-customers img {
-    max-width: 100%;
-    display: block; }
+    max-width: 100%; }
   .for-customers .description {
     display: flex;
     flex-direction: column;
@@ -1201,7 +1206,9 @@ section#history {
 
 .from-center {
   position: relative;
-  opacity: 0; }
+  opacity: 0;
+  display: flex;
+  align-items: center; }
   .from-center:nth-of-type(odd) {
     transform: translate3d(20%, 10%, 0);
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s; }

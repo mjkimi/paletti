@@ -26,6 +26,19 @@
       }
     }
   }
+
+  #grid .for-customers {
+    grid-template-columns: 1fr;
+    :nth-child(3) {
+      grid-row: 4;
+    }
+  }
+  section#history .history-wrapper {
+    grid-template-columns: 1fr;
+    :nth-child(2) {
+      grid-row: 1;
+    }
+  }
 }
 
 // Smartphones (width <500px)

@@ -459,25 +459,24 @@ button#search-close {
 }
 
 // history
-section#history {
+section.history {
   width: 80%;
   margin: 4rem auto;
   height: 50%;
   h2 {
     text-align: center;
     margin-bottom: 2rem;
-    // font-family: 'Montserrat', sans-serif;
   }
 
   .history-wrapper {
     grid-column-gap: 2rem;
-    grid-row-gap: 5rem;
+    // grid-row-gap: 5rem;
     height: 100%;
     display: grid;
     grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
     align-items: start;
     align-content: start;
-    .one {
+    .history-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -486,15 +485,10 @@ section#history {
       }
     }
 
-    .three {
-      height: 100%;
-      background: url('../img/main/Old_building1.jpg') no-repeat center/contain;
-      position: relative;
+    .history-img {
+      margin: auto 0;
       img {
-        width: 150px;
-        position: absolute;
-        top: 0;
-        left: -50px;
+        max-width: 100%;
       }
     }
   }
@@ -510,11 +504,17 @@ section#history {
   display: grid;
   grid-column-gap: 2rem;
   grid-row-gap: 5rem;
+  // grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-template-columns: 48% 48%;
+  grid-item:nth-child(4) {
+    order: 3;
+  }
+  grid-item:nth-child(3) {
+    order: 4;
+  }
 
   img {
     max-width: 100%;
-    display: block;
   }
   .description {
     display: flex;
@@ -528,6 +528,8 @@ section#history {
 .from-center {
   position: relative;
   opacity: 0;
+  display: flex;
+  align-items: center;
   &:nth-of-type(odd) {
     transform: translate3d(20%, 10%, 0);
     transition: all $cubic-bezier 0.7s;
