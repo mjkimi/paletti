@@ -6,6 +6,7 @@
 @import 'slider';
 @import 'products';
 @import 'personalize';
+@import 'mobile';
 
 * {
   box-sizing: border-box;
@@ -39,6 +40,12 @@ body {
 section.section {
   width: 100%;
   overflow: hidden;
+  //
+  // height: 100%;
+}
+
+picture {
+  display: block;
 }
 
 h1,
@@ -523,11 +530,11 @@ section#history {
   opacity: 0;
   &:nth-of-type(odd) {
     transform: translate3d(20%, 10%, 0);
-    transition: all cubic-bezier(0.1, 0.59, 0.3, 0.38) 0.7s;
+    transition: all $cubic-bezier 0.7s;
   }
   &:nth-of-type(even) {
     transform: translate3d(-20%, 10%, 0);
-    transition: all cubic-bezier(0.1, 0.59, 0.3, 0.38) 0.7s;
+    transition: all $cubic-bezier 0.7s;
   }
   &.fade-in {
     opacity: 1;

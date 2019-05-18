@@ -158,10 +158,17 @@
         <div class="slider-wrapper">
           <div class="slider">
             <div class="slide ">
-              <img src="./img/main/Chocolate.jpg" alt="Chocolate pieces"  class="main-slide">
+              <picture class="responsive-image">
+                <source media="(min-width: 1171px)" srcset="./img/main/Chocolate.jpg">
+                <source media="(min-width: 550px)" srcset="./img/mobile/Chocolate_medium.jpg">
+                <source media="(min-width: 1px)" srcset="./img/mobile/Chocolate_small.jpg">
+                <img src="./img/main/Chocolate.jpg" alt="Chocolate pieces"  class="main-slide  responsive-image" id="first-slide">
+              </picture>
+              
+              <!-- <img alt="Chocolate pieces"  class="main-slide" id="first-slide"> -->
               <div class="side-module color-module">
                 <img src="./img/main/Paletti.png" alt="Three tastes of Paletti">
-                <h3>Shop Paletti products online</h3>
+                <h3>Shop Paletti products</h3>
                 <a href="#shop">
                   <button type="button" class="btn btn-action buy-now"><span>Buy now</span></button>
                 </a>
@@ -169,9 +176,16 @@
             </div>
 
             <div class="slide">
-              <img src="./img/main/Personal_chocolate1.jpg" alt="Chocolate letter" class="main-slide">
+              <picture class="responsive-image">
+                <source media="(min-width: 1171px)" srcset="./img/main/Personal_chocolate1.jpg">
+                <source media="(min-width: 550px)" srcset="./img/mobile/Personal_chocolate_medium.jpg">
+                <source media="(min-width: 1px)" srcset="./img/mobile/Personal_chocolate_small.jpg">
+                <img src="./img/main/Personal_chocolate1.jpg" alt="Chocolate letter" class="main-slide  responsive-image" id="second-slide">
+              </picture>
+              
+              <!-- <img alt="Chocolate letter" class="main-slide" id="second-slide"> -->
               <div class="side-module light-module">
-                <h3>Design your own</h3>
+                <h4>Design your own</h4>
                 <p>Chocolate letter</p>
                 <a href="#personalize">
                   <button type="button" class="btn btn-action buy-now light-theme"><span>Say it with chocolate</span>

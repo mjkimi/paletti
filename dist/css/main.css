@@ -289,12 +289,47 @@
   .header-menu-btn:hover {
     color: #d3071b; }
 
+/*
+.slider-wrapper {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  // overflow: hidden;
+  height: calc(100vh - 150px);
+  // width: 100vw;
+  &.dark-bg {
+    background: $primary-color;
+  }
+}
+
+.slider .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > img.main-slide {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transform: scale(1.15);
+    transition: transform 3s $cubic-bezier, opacity 1s ease;
+  }
+
+*/
 .slider-wrapper {
   position: relative;
   width: 100vw;
   overflow: hidden; }
 
 .slider {
+  width: 100%;
   position: relative;
   height: calc(100vh - 150px); }
   .slider.dark-bg {
@@ -305,34 +340,35 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+  display: none;
   display: flex;
   align-items: center;
   justify-content: center; }
-  .slider .slide > img.main-slide {
+  .slider .slide .responsive-image {
     position: relative;
-    width: 100%;
     opacity: 0;
+    width: 100%;
     transform: scale(1.15);
     transition: transform 3s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s ease; }
   .slider .slide a {
-    width: 70%;
+    min-width: 300px;
+    max-width: 70%;
     display: block;
-    margin: 0 auto;
     text-align: center; }
   .slider .slide .color-module h3 {
-    font-size: 2rem;
+    font-size: 3vw;
     margin: 2rem 0; }
   .slider .slide .light-module {
     color: #fff;
     line-height: 1.2;
     align-items: flex-end; }
-    .slider .slide .light-module h3 {
+    .slider .slide .light-module h4 {
       font-family: 'Allura', cursive, sans-serif;
       font-weight: normal;
       font-size: 2rem; }
     .slider .slide .light-module p {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
+      font-size: 3vw;
       text-transform: uppercase;
       margin: 0 0 2rem; }
 
@@ -340,10 +376,10 @@
   position: absolute;
   right: 0;
   top: 0;
-  min-width: 250px;
-  max-width: 45%;
+  min-width: 320px;
+  max-width: 35%;
   height: 100%;
-  margin: 0 4rem;
+  margin: 0 5vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -356,7 +392,7 @@
 
 .slider .current {
   z-index: 1; }
-  .slider .current > img.main-slide {
+  .slider .current .responsive-image {
     transform: scale(1);
     opacity: 1; }
   .slider .current .side-module {
@@ -755,6 +791,34 @@ section.personalize {
   section.personalize span.required {
     color: #d3071b; }
 
+@media screen and (min-width: 1171px) {
+  .slider {
+    max-height: calc(100vh - 150px) !important; } }
+
+@media screen and (max-width: 768px) {
+  .slider .side-module {
+    margin: 0 auto; }
+    .slider .side-module img {
+      max-width: 100%; }
+    .slider .side-module h3,
+    .slider .side-module p {
+      font-size: 1.5rem !important;
+      margin: 0.7rem 0 !important;
+      text-transform: capitalize !important; }
+    .slider .side-module.light-module {
+      align-items: center; }
+      .slider .side-module.light-module a {
+        width: 100%; } }
+
+@media screen and (max-width: 550px) {
+  .slider .side-module {
+    top: 45%;
+    bottom: 0;
+    left: 0;
+    height: 50%; }
+    .slider .side-module a {
+      width: 100%; } }
+
 * {
   box-sizing: border-box; }
 
@@ -776,6 +840,9 @@ body {
 section.section {
   width: 100%;
   overflow: hidden; }
+
+picture {
+  display: block; }
 
 h1,
 h2,
@@ -1137,10 +1204,10 @@ section#history {
   opacity: 0; }
   .from-center:nth-of-type(odd) {
     transform: translate3d(20%, 10%, 0);
-    transition: all cubic-bezier(0.1, 0.59, 0.3, 0.38) 0.7s; }
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s; }
   .from-center:nth-of-type(even) {
     transform: translate3d(-20%, 10%, 0);
-    transition: all cubic-bezier(0.1, 0.59, 0.3, 0.38) 0.7s; }
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s; }
   .from-center.fade-in {
     opacity: 1;
     transform: translate3d(0, 0, 0) !important; }

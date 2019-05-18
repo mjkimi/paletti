@@ -1,0 +1,43 @@
+// Desktops & Laptops
+@include mediaLg {
+  .slider {
+    max-height: calc(100vh - 150px) !important;
+  }
+}
+
+// Tablets & Small Laptops (width <768px)
+@include mediaMd {
+  // slider
+  .slider .side-module {
+    margin: 0 auto;
+    img {
+      max-width: 100%;
+    }
+    h3,
+    p {
+      font-size: 1.5rem !important;
+      margin: 0.7rem 0 !important;
+      text-transform: capitalize !important;
+    }
+    &.light-module {
+      align-items: center;
+      a {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Smartphones (width <500px)
+@include mediaSm {
+  // -> slider
+  .slider .side-module {
+    top: 45%;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    a {
+      width: 100%;
+    }
+  }
+}

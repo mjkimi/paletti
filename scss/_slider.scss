@@ -1,3 +1,4 @@
+/*
 .slider-wrapper {
   position: relative;
   width: 100vw;
@@ -30,16 +31,52 @@
     transition: transform 3s $cubic-bezier, opacity 1s ease;
   }
 
+*/
+
+.slider-wrapper {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.slider {
+  width: 100%;
+  position: relative;
+  height: calc(100vh - 150px);
+  &.dark-bg {
+    background: $primary-color;
+  }
+}
+
+.slider .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .responsive-image {
+    position: relative;
+    opacity: 0;
+    width: 100%;
+    transform: scale(1.15);
+    transition: transform 3s $cubic-bezier, opacity 1s ease;
+  }
+
   a {
-    width: 70%;
+    min-width: 300px;
+    max-width: 70%;
     display: block;
-    margin: 0 auto;
+    // margin: 0 auto;
     text-align: center;
   }
 
   .color-module {
     h3 {
-      font-size: 2rem;
+      font-size: 3vw;
       margin: 2rem 0;
     }
   }
@@ -48,14 +85,15 @@
     color: $bckgrd-color;
     line-height: 1.2;
     align-items: flex-end;
-    h3 {
+    h4 {
       font-family: 'Allura', cursive, sans-serif;
       font-weight: normal;
       font-size: 2rem;
     }
     p {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
+      font-size: 3vw;
+      // font-size: 2.5rem;
       text-transform: uppercase;
       margin: 0 0 2rem;
     }
@@ -66,15 +104,14 @@
   position: absolute;
   right: 0;
   top: 0;
-  min-width: 250px;
-  max-width: 45%;
+  min-width: 320px;
+  max-width: 35%;
   height: 100%;
-  margin: 0 4rem;
+  margin: 0 5vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // text-align: left;
   opacity: 0;
   transform: translate3d(-10%, 0, 0);
   transition: all 1s ease;
@@ -85,7 +122,7 @@
 
 .slider .current {
   z-index: 1;
-  > img.main-slide {
+  .responsive-image {
     transform: scale(1);
     opacity: 1;
   }
@@ -97,7 +134,6 @@
 }
 
 .slider-control {
-  // background: #fff;
   position: absolute;
   z-index: 2;
   margin-left: auto;

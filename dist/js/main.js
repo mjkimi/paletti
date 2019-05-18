@@ -74,15 +74,42 @@
   /*-------------End--Page scroll---------------*/
 
   /*---------------Slider-------------------*/
-
+  const slider = document.querySelector('.slider');
   const slides = document.querySelectorAll('.slide');
+  let picture = document.querySelector('.responsive-image');
   let autoplay = true;
   let intervalTime = 5000;
   let slideInterval;
+  window.onresize = () => updateSliderSize();
+
+  // set the height of  slider to the height of absolute slide:
+  const updateSliderSize = () => {
+    slider.style.height = picture.offsetHeight - 15 + 'px';
+    console.log(123);
+  };
+
+  var width = 0;
+  function updateWindowSize() {
+    if (document.body && document.body.offsetWidth) {
+      width = document.body.offsetWidth;
+    }
+    if (
+      document.compatMode == 'CSS1Compat' &&
+      document.documentElement &&
+      document.documentElement.offsetWidth
+    ) {
+      width = document.documentElement.offsetWidth;
+    }
+    if (window.innerWidth) {
+      width = window.innerWidth;
+    }
+  }
 
   class Slider {
     runSlider() {
-      document.querySelector('.slide').classList.add('current');
+      const singleSlide = document.querySelector('.slide');
+      singleSlide.classList.add('current');
+      const picture = document.querySelector('.responsive-image');
       if (autoplay) {
         slideInterval = setInterval(this.nextSlide, intervalTime);
       }
@@ -685,6 +712,10 @@
   };
   /*-----------End--Dark overlay--------------*/
 
+  // image src on slider
+  // const firstSlide = document.getElementById('first-slide')
+  // const secondSlide = document.getElementById('second-slide')
+
   document.addEventListener('DOMContentLoaded', () => {
     const scroll = new PageScroll();
     const slider = new Slider();
@@ -703,6 +734,7 @@
         ui.displayProducts(products);
         Storage.saveProducts(products);
         search.setup(products);
+        updateSliderSize();
       })
       .then(() => {
         ui.getProductButtons();
