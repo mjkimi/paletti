@@ -26,18 +26,23 @@
       }
     }
   }
-
+  // -> for-customers section
   #grid .for-customers {
     grid-template-columns: 1fr;
     :nth-child(3) {
       grid-row: 4;
     }
   }
+  // -> history section
   section#history .history-wrapper {
     grid-template-columns: 1fr;
     :nth-child(2) {
       grid-row: 1;
     }
+  }
+  // -> footer
+  footer .footer-cols {
+    display: none;
   }
 }
 

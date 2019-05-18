@@ -816,7 +816,9 @@ section.personalize {
   section#history .history-wrapper {
     grid-template-columns: 1fr; }
     section#history .history-wrapper :nth-child(2) {
-      grid-row: 1; } }
+      grid-row: 1; }
+  footer .footer-cols {
+    display: none; } }
 
 @media screen and (max-width: 550px) {
   .slider .side-module {
@@ -1239,6 +1241,9 @@ footer .footer-wrapper {
   margin: 0 auto;
   padding: 0 3rem;
   background: #f9f9f9; }
+  footer .footer-wrapper button {
+    margin: 0 auto 1rem;
+    width: 200px; }
 
 .footer-cols {
   display: grid;
@@ -1259,8 +1264,6 @@ footer .footer-wrapper {
     font-size: 1.2rem;
     padding-bottom: 0.5rem;
     color: #d3071b; }
-  .footer-cols button {
-    margin-top: 1rem; }
 
 footer .footer-bottom {
   background: #f2f2f2;

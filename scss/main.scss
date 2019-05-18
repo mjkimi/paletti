@@ -571,6 +571,10 @@ footer .footer-wrapper {
   margin: 0 auto;
   padding: 0 3rem;
   background: #f9f9f9;
+  button {
+    margin: 0 auto 1rem;
+    width: 200px;
+  }
 }
 
 .footer-cols {
@@ -598,10 +602,6 @@ footer .footer-wrapper {
     font-size: 1.2rem;
     padding-bottom: 0.5rem;
     color: $secondary-color;
-  }
-
-  button {
-    margin-top: 1rem;
   }
 }
 
