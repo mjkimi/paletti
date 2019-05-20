@@ -660,14 +660,14 @@
     grid-area: checkout; }
 
 section.personalize {
-  height: 100vh;
   background: url("../img/bg0.jpg") no-repeat center/cover;
   color: #fff;
   font-weight: 400; }
   section.personalize .design-grid {
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr 1fr;
+    min-height: 700px; }
   section.personalize .column-wrapper {
     position: relative;
     display: flex;
@@ -681,6 +681,10 @@ section.personalize {
   section.personalize .mockup {
     width: 100%;
     margin: auto 0; }
+    section.personalize .mockup .mckp-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 200px; }
     section.personalize .mockup img {
       width: 100%;
       max-width: 550px; }
@@ -694,11 +698,12 @@ section.personalize {
       margin: 40px 0 0 20px;
       white-space: nowrap;
       transform: rotate(-13deg);
-      width: 520px;
+      width: 100%;
+      max-width: 520px;
       text-align: center;
       position: absolute;
       top: 0;
-      left: calc((50vw - 550px) / 2); }
+      left: 0; }
   section.personalize .message {
     position: absolute;
     text-align: left;
@@ -817,6 +822,20 @@ section.personalize {
     grid-template-columns: 1fr; }
     section#history .history-wrapper :nth-child(2) {
       grid-row: 1; }
+  section#personalize #personal {
+    max-height: 740px;
+    grid-template-columns: 1fr;
+    align-items: start;
+    justify-content: center;
+    text-align: center; }
+    section#personalize #personal .mockup {
+      margin: 0 !important; }
+    section#personalize #personal .message {
+      bottom: -8rem; }
+      section#personalize #personal .message h2 {
+        margin-bottom: 1rem; }
+    section#personalize #personal .input-wrapper {
+      margin-top: 1rem; }
   footer .footer-cols {
     display: none; } }
 
@@ -827,7 +846,9 @@ section.personalize {
     left: 0;
     height: 50%; }
     .slider .side-module a {
-      width: 100%; } }
+      width: 100%; }
+  .parallax {
+    display: none; } }
 
 * {
   box-sizing: border-box; }
@@ -1223,7 +1244,7 @@ section.history {
 
 .parallax .pimg-1,
 .parallax .pimg-2 {
-  height: 350px;
+  height: 21vw;
   background-attachment: fixed;
   background-position: center;
   background-size: 70%;

@@ -85,25 +85,28 @@
   // set the height of  slider to the height of absolute slide:
   const updateSliderSize = () => {
     slider.style.height = picture.offsetHeight - 15 + 'px';
-    console.log(123);
+    //  font-size <span> of personalize section
+    const coverImg = document.querySelector('#cover-img');
+    const imgHeight = coverImg.clientHeight;
+    coverImg.nextElementSibling.style.fontSize = imgHeight / 3 + 'px';
   };
 
-  var width = 0;
-  function updateWindowSize() {
-    if (document.body && document.body.offsetWidth) {
-      width = document.body.offsetWidth;
-    }
-    if (
-      document.compatMode == 'CSS1Compat' &&
-      document.documentElement &&
-      document.documentElement.offsetWidth
-    ) {
-      width = document.documentElement.offsetWidth;
-    }
-    if (window.innerWidth) {
-      width = window.innerWidth;
-    }
-  }
+  // var width = 0;
+  // function updateWindowSize() {
+  //   if (document.body && document.body.offsetWidth) {
+  //     width = document.body.offsetWidth;
+  //   }
+  //   if (
+  //     document.compatMode == 'CSS1Compat' &&
+  //     document.documentElement &&
+  //     document.documentElement.offsetWidth
+  //   ) {
+  //     width = document.documentElement.offsetWidth;
+  //   }
+  //   if (window.innerWidth) {
+  //     width = window.innerWidth;
+  //   }
+  // }
 
   class Slider {
     runSlider() {
@@ -365,6 +368,7 @@
   const form1 = document.querySelector('.message');
   const form2 = document.querySelector('.send-to');
   const prompt = document.querySelector('#prompt');
+  const yourMsg = document.querySelector('#your-message');
 
   class Personolize {
     setupListeners() {
@@ -376,7 +380,6 @@
     }
 
     typeMessage(text) {
-      const yourMsg = document.querySelector('#your-message');
       yourMsg.innerHTML = text;
       prompt.innerHTML = ' maximum 19 characters';
     }

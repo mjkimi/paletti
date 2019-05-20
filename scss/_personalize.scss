@@ -1,5 +1,5 @@
 section.personalize {
-  height: 100vh;
+  // height: 100vh;
   background: url('../img/bg0.jpg') no-repeat center/cover;
   color: $bckgrd-color;
   font-weight: 400;
@@ -8,6 +8,7 @@ section.personalize {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    min-height: 700px;
   }
 
   .column-wrapper {
@@ -24,6 +25,11 @@ section.personalize {
   }
 
   .mockup {
+    .mckp-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 200px;
+    }
     width: 100%;
     margin: auto 0;
     img {
@@ -36,16 +42,22 @@ section.personalize {
       color: #c69c67;
       display: inline-block;
       overflow: hidden;
+      // font-size: 10vw;
+      // font-size: 12vmin;
+      // font-size: calc(4vw + 4vh + 2vmin);
+      // font-size: calc(100% + 50px);
       font-size: 72px;
       margin: 40px 0 0 20px;
       white-space: nowrap;
       transform: rotate(-13deg);
-      width: 520px;
+      width: 100%;
+      max-width: 520px;
       text-align: center;
       position: absolute;
       top: 0;
       // max-width of the image is 550px; if it's more, then add to the left position margin of the image
-      left: calc((50vw - 550px) / 2);
+      left: 0;
+      // left: calc((50vw - 550px) / 2);
     }
   }
 
