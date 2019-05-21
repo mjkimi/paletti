@@ -154,6 +154,19 @@ button {
   }
 }
 
+.red-theme {
+  background: $secondary-color;
+  color: $bckgrd-color;
+  // background-color: none;
+  &:hover {
+    color: $secondary-color !important;
+    border-color: $gray-border-color !important;
+  }
+  &::before {
+    background: $bckgrd-color;
+  }
+}
+
 .dark-theme {
   background: $dark-blue;
   color: $bckgrd-color;
@@ -300,14 +313,17 @@ header {
       @include easeOut;
       &:not(:last-child):hover {
         color: $secondary-color;
-        img {
-          filter: invert(27%) sepia(97%) saturate(5159%) hue-rotate(344deg)
-            brightness(78%) contrast(116%);
-        }
+        // img {
+        //   filter: invert(27%) sepia(97%) saturate(5159%) hue-rotate(344deg)
+        //     brightness(78%) contrast(116%);
+        // }
       }
       &.my {
         // background: #000;
         margin: 0 20px;
+        // &:hover {
+
+        // }
         span .typo {
           font-family: 'Allura', cursive, sans-serif;
           font-weight: bold;

@@ -322,19 +322,63 @@
   }
 
   /* ---------------End--Search----------------- */
+  // const headerDialog = document.querySelector('.header-menu-dialog');
+  // const myP = document.querySelector('.my');
+  // myP.addEventListener('mouseover', addKeep);
+  // myP.addEventListener('mouseleave', removeKeep);
+
+  // function addKeep() {
+  //   headerDialog.classList.add('keep');
+  // }
+  // function removeKeep() {
+  //   headerDialog.classList.remove('keep');
+  // }
+
+  // let activeElement = document.activeElement;
+  // // console.log(activeElement);
+  // if (activeElement.classList.contains('.text-input')) {
+  //   addKeep();
+  //   console.log(123);
+  // } else {
+  //   removeKeep();
+  // }
 
   class Signin {
     setup() {
       const inputs = document.querySelectorAll('.text-input');
+
+      // const headerDialog = document.querySelector('.header-menu-dialog');
+      // const myP = document.querySelector('.my');
+      // window.addEventListener('click', e => {
+      //   if (!headerDialog.contains(e.target)) {
+      //     removeKeep();
+      //     hideDarkOverlay();
+      //   }
+      // });
+      // myP.addEventListener('click', () => {
+      //   addKeep();
+      //   showDarkOverlay();
+      // });
+      // const addKeep = () => {
+      //   headerDialog.classList.add('keep');
+      // };
+      // const removeKeep = () => {
+      //   headerDialog.classList.remove('keep');
+      // };
+      // dark.addEventListener('click', removeKeep);
       // -> Label positioning
       inputs.forEach(input => {
         input.addEventListener('input', () => {
           const value = input.value.trim();
           // if typed:
           if (value) {
+            // headerDialog.style.visibility = 'visible';
+            // addKeep();
             input.dataset.state = 'not-empty';
           } else {
             input.dataset.state = '';
+            // removeKeep();
+            // headerDialog.style.visibility = 'hidden';
           }
         });
       });

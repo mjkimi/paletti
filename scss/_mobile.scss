@@ -7,6 +7,13 @@
 
 // Tablets & Small Laptops (width <768px)
 @include mediaMd {
+  .hidden-on-sm {
+    display: none;
+  }
+  h2.headline {
+    font-size: 2rem;
+  }
+
   // slider
   .slider .side-module {
     margin: 0 auto;
@@ -46,7 +53,6 @@
     #personal {
       max-height: 740px;
       grid-template-columns: 1fr;
-      // justify-items: center;
       align-items: start;
       justify-content: center;
       text-align: center;
@@ -55,26 +61,16 @@
         margin: 0 !important;
       }
 
-      // .mockup .column-wrapper {
-      //   justify-content: flex-start !important;
-      //   align-items: flex-start;
-      //   align-content: center;
-      // display: block;
-      // }
-
       .message {
         bottom: -8rem;
         h2 {
           margin-bottom: 1rem;
+          font-size: 7vw;
         }
       }
 
       .input-wrapper {
         margin-top: 1rem;
-        // font-size: 1rem;
-        input {
-          // padding: 0 0.5rem;
-        }
       }
     }
   }
@@ -87,6 +83,17 @@
 
 // Smartphones (width <500px)
 @include mediaSm {
+  h2.headline {
+    font-size: 1.7rem;
+  }
+
+  .module-wrapper .shop-title {
+    margin-bottom: 1rem;
+  }
+
+  .product .description-wrapper {
+    min-height: initial;
+  }
   // -> slider
   .slider .side-module {
     top: 45%;
@@ -101,5 +108,15 @@
   // ->parallax
   .parallax {
     display: none;
+  }
+
+  // -> cart
+  section#shop .cart {
+    min-width: 100vw;
+  }
+
+  // -> search
+  .header-search .search-block {
+    width: 95vw !important;
   }
 }
