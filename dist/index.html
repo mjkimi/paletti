@@ -24,9 +24,10 @@
                 </div>
               </form>
             </div>
-          </div>
-          <!--Search results are inserted below:-->
-          <div id="search-result"></div> 
+          </div>          
+          <div id="search-result">
+            <!--Search results are inserted here-->
+          </div> 
         </div>
         <!-- // Search -->
         <!-- Sticky menu // -->
@@ -54,7 +55,6 @@
                 
                 <li class="header-menu-item my">
                   <a href="#" class="btn">
-                    <!-- <span>My <img src="./img/logo_colorless.png" alt="Paletti logo" /></span> -->
                     <span class="hidden-on-sm">My <span class="typo">P</span> </span>
                   </a>
                     <!-- Sign in form -->
@@ -76,7 +76,6 @@
                               <a href="#">Forgot Your Password?</a>
                             </div>
                             <button type="submit" class="btn btn-action buy-now login red-theme"><span>Login</span></button>
-                            <!-- <button type="submit" class="primary-btn">Login</button> -->
                           </form>
                           <div class="or">
                             <hr class="bar" />
@@ -84,7 +83,6 @@
                             <hr class="bar" />
                           </div>
                           <p>To benefit from our exclusive services and keep up to date with our latest publications <span>&#10150;</span></p>
-                          <!-- <a href="#" class=" secondary-btn">Sign up</a> -->
                           <button type="button" class="btn btn-action buy-now "><span>Sign up</span></button>
                         </div>
                       </div>
@@ -115,43 +113,45 @@
             Close
           </button>
           <nav class="menu">
-              <ul class="menu-nav">
-                <li class="nav-item"> 
-                  <a href="#main" class="nav-link">
-                    <i class="fas fa-palette fa-lg menu-icons"></i> 
-                      Main
+            <ul class="menu-nav">
+              <li class="nav-item"> 
+                <a href="#main" class="nav-link">
+                  <i class="fas fa-palette fa-lg menu-icons"></i> 
+                    Main
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#shop" class="nav-link">
+                  <i class="fab fa-servicestack fa-lg menu-icons"></i>
+                  Shop Exclusives
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#packaging" class="nav-link">
+                  <i class="fas fa-box-open fa-lg menu-icons"></i> 
+                  Packaging & Delivery
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#personalize" class="nav-link">
+                  <i class="far fa-newspaper fa-lg menu-icons"></i>
+                  Chocolate letter
+                </a>
+              </li>
+              <li class="nav-item">
+                  <a href="#history" class="nav-link">
+                    <i class="fab fa-pied-piper-hat fa-lg menu-icons"></i>
+                    Our history
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="#shop" class="nav-link">
-                    <i class="fab fa-servicestack fa-lg menu-icons"></i>
-                    Shop Exclusives
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#packaging" class="nav-link">
-                    <i class="fas fa-box-open fa-lg menu-icons"></i> 
-                    Packaging & Delivery
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#personalize" class="nav-link">
-                    <i class="far fa-newspaper fa-lg menu-icons"></i>
-                    Chocolate letter
-                  </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#history" class="nav-link">
-                        <i class="fab fa-pied-piper-hat fa-lg menu-icons"></i>
-                      <!-- <i class="far fa-newspaper "></i> -->
-                      Our history
-                    </a>
-                  </li>
-              </ul>
+            </ul>
           </nav>
         </div>
-        <!-- Dark overlay -->
-        <div class="dark-overlay"></div>
+        
+        <div class="dark-overlay">
+          <!-- Dark overlay -->
+        </div>
+
       </div>
     </header>
     <main>
@@ -166,8 +166,6 @@
                 <source media="(min-width: 1px)" srcset="./img/mobile/Chocolate_small.jpg">
                 <img src="./img/main/Chocolate.jpg" alt="Chocolate pieces"  class="main-slide  responsive-image" id="first-slide">
               </picture>
-              
-              <!-- <img alt="Chocolate pieces"  class="main-slide" id="first-slide"> -->
               <div class="side-module color-module">
                 <img src="./img/main/Paletti.png" alt="Three tastes of Paletti">
                 <h3>Shop Paletti products</h3>
@@ -179,23 +177,20 @@
 
             <div class="slide">
               <picture class="responsive-image">
-                <source media="(min-width: 1171px)" srcset="./img/main/Personal_chocolate1.jpg">
+                <source media="(min-width: 1171px)" srcset="./img/main/Personal_chocolate.jpg">
                 <source media="(min-width: 550px)" srcset="./img/mobile/Personal_chocolate_medium.jpg">
                 <source media="(min-width: 1px)" srcset="./img/mobile/Personal_chocolate_small.jpg">
-                <img src="./img/main/Personal_chocolate1.jpg" alt="Chocolate letter" class="main-slide  responsive-image" id="second-slide">
+                <img src="./img/main/Personal_chocolate.jpg" alt="Chocolate letter" class="main-slide  responsive-image" id="second-slide">
               </picture>
-              
-              <!-- <img alt="Chocolate letter" class="main-slide" id="second-slide"> -->
               <div class="side-module light-module">
                 <h4>Design your own</h4>
                 <p>Chocolate letter</p>
                 <a href="#personalize">
                   <button type="button" class="btn btn-action buy-now light-theme"><span>Say it with chocolate</span>
                   </button>
-              </a>
+                </a>
               </div>
             </div>
-
           </div> 
             <!--Slider control buttons -->
             <div class="slider-control">
@@ -251,13 +246,11 @@
             </div>
           </div>
         </div>       
-        <!-- //Info, Packaging & Delivery -->
+      <!-- //Info, Packaging & Delivery -->
         <!-- Parallax -->
-        <div class="parallax">
-          
-            <div class="pimg-1">
-            </div>
-            <div class="pimg-2"></div>
+        <div class="parallax">          
+          <div class="pimg-1"></div>            
+          <div class="pimg-2"></div>
         </div>
         <!-- Cart// -->
         <div class="cart-overlay">
@@ -283,68 +276,64 @@
       </section>
       <!-- // Products -->
      
-      
       <section class="personalize" id="personalize">
         <div class="design-grid" id="personal">
           <div class="mockup">
             <div class="column-wrapper">
               <div class="mckp-wrap">
-                <img src="./img/mockup4.png" alt="" id="cover-img">
+                <img src="./img/mockup4.png" alt="Cover image" id="cover-img">
                 <span id="your-message">Your Message</span>
               </div>
             </div>
           </div>
-          <!-- <div class="your-design"> -->
-            <div class="column-wrapper">
-              <div class="message">
-                <h2>Design Your Chocolate</h2>
-                <div class="input-wrapper">
-                  <input id="design-input" type="text" maxlength="15" required autocomplete="off">
-                  <label for="design-input" class="input-label">Your Message <span class="required">&#42;</span></label>
-                  <h4><span class="required">&#42;</span> <span id="prompt"> maximum 19 characters</span></h4>
-                </div>
-                <button type="button" class="btn btn-action buy-now light-theme" id="next-form"><span>Next</span></button>
+          <div class="column-wrapper">
+            <div class="message">
+              <h2>Design Your Chocolate</h2>
+              <div class="input-wrapper">
+                <input id="design-input" type="text" maxlength="15" required autocomplete="off">
+                <label for="design-input" class="input-label">Your Message <span class="required">&#42;</span></label>
+                <h4><span class="required">&#42;</span> <span id="prompt"> maximum 19 characters</span></h4>
               </div>
+              <button type="button" class="btn btn-action buy-now light-theme" id="next-form"><span>Next</span></button>
+            </div>
 
-              <div class="send-to" >
-                <form id="receiver">
-                  <h2>Send Chocolate to...</h2>
-                  <h4>Fill in receiver's shipping address.</h4>
-                  <div class="input-wrapper">
-                    <input id="name" type="text" maxlength="50" required autocomplete="off">
-                    
-                    <label for="name" class="input-label">Full Name <span class="required">&#42;</span></label>
+            <div class="send-to" >
+              <form id="receiver">
+                <h2>Send Chocolate to...</h2>
+                <h4>Fill in receiver's shipping address.</h4>
+                <div class="input-wrapper">
+                  <input id="name" type="text" maxlength="50" required autocomplete="off">                  
+                  <label for="name" class="input-label">Full Name <span class="required">&#42;</span></label>
+                </div>
+                <div class="input-wrapper">
+                  <input id="address" type="text" maxlength="150" required autocomplete="off">
+                  <label for="address" class="input-label">Address <span class="required">&#42;</span></label>
+                </div>
+                <div class="row">
+                  <div class="input-wrapper half">
+                    <input id="zip-code" type="text" maxlength="8" required autocomplete="off">
+                    <label for="zip-code" class="input-label">Zip code <span class="required">&#42;</span></label>
                   </div>
-                  <div class="input-wrapper">
-                    <input id="address" type="text" maxlength="150" required autocomplete="off">
-                    <label for="address" class="input-label">Address <span class="required">&#42;</span></label>
+                  <div class="input-wrapper half">
+                    <input id="city" type="text" maxlength="20" required autocomplete="off">
+                    <label for="city" class="input-label">City <span class="required">&#42;</span></label>
                   </div>
-                  <div class="row">
-                    <div class="input-wrapper half">
-                      <input id="zip-code" type="text" maxlength="8" required autocomplete="off">
-                      <label for="zip-code" class="input-label">Zip code <span class="required">&#42;</span></label>
-                    </div>
-                    <div class="input-wrapper half">
-                      <input id="city" type="text" maxlength="20" required autocomplete="off">
-                      <label for="city" class="input-label">City <span class="required">&#42;</span></label>
-                    </div>
-                  </div>
-                  <div class="input-wrapper countries">
-                    <label for="select">
-                      <select id="select-country" name="select" required >
-                        <option value="" selected="">Select country</option>
-                      </select>
-                    </label>
-                    <span class="required select-span">&#42;</span>
-                  </div>
-                  <h4 class="required"><span class="required">&#42;</span> this is required field</h4>
-                  <div class="row">
-                    <button id="previous" type="button" class="btn back"" ><span>Back</span></button>
-                    <button id="add-to-cart" type="button" class="btn btn-action buy-now light-theme bag-btn" data-id="personal"><span>Add to cart</span></button>
-                  </div>
-                </form>
-              </div>
-            <!-- </div> -->
+                </div>
+                <div class="input-wrapper countries">
+                  <label for="select">
+                    <select id="select-country" name="select" required >
+                      <option value="" selected="">Select country</option>
+                    </select>
+                  </label>
+                  <span class="required select-span">&#42;</span>
+                </div>
+                <h4 class="required"><span class="required">&#42;</span> this is required field</h4>
+                <div class="row">
+                  <button id="previous" type="button" class="btn back"" ><span>Back</span></button>
+                  <button id="add-to-cart" type="button" class="btn btn-action buy-now light-theme bag-btn" data-id="personal"><span>Add to cart</span></button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -357,7 +346,7 @@
 
             <p>Yet, we never forget our roots. To be actively and wholeheartedly involved, to honor the old and, at the same time, dare to try the new – is our conviction and characterizes us as a family business. And I can give you my personal word of honor on this.</p>
             <div class="signature">
-              <img src="./img/main/Signature.png" alt="signature">
+              <img src="./img/main/Signature.png" alt="Signature">
             </div>
             <p>Frank Paletti</p>
           </div>
@@ -427,11 +416,7 @@
             <li>
               <a href="#">Events</a>
             </li>
-            <li>
-              <!-- <button type="button" class="btn btn-action buy-now"><span>Contact us</span></button> -->
-            </li>
-          </ul>
-          
+          </ul>          
         </div>
         <button type="button" class="btn btn-action buy-now"><span>Contact us</span></button>
       </div>
@@ -441,6 +426,5 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="js/main.js"></script>
-    <!-- <script src="js/main1.js"></script> -->
   </body>
 </html>

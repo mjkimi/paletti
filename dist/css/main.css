@@ -31,7 +31,7 @@
   visibility: visible; }
 
 .my:hover .signin {
-  opacity: 1 !important;
+  opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: all 0.5s ease-in-out; }
 
@@ -259,40 +259,6 @@
   .header-menu-btn:hover {
     color: #d3071b; }
 
-/*
-.slider-wrapper {
-  position: relative;
-  width: 100vw;
-  overflow: hidden;
-}
-
-.slider {
-  position: relative;
-  // overflow: hidden;
-  height: calc(100vh - 150px);
-  // width: 100vw;
-  &.dark-bg {
-    background: $primary-color;
-  }
-}
-
-.slider .slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  > img.main-slide {
-    position: relative;
-    width: 100%;
-    opacity: 0;
-    transform: scale(1.15);
-    transition: transform 3s $cubic-bezier, opacity 1s ease;
-  }
-
-*/
 .slider-wrapper {
   position: relative;
   width: 100vw;
@@ -1171,31 +1137,6 @@ button#search-close {
     border-radius: 50%;
     color: #fff; }
 
-section.history {
-  width: 80%;
-  margin: 4rem auto;
-  height: 50%; }
-  section.history h2 {
-    text-align: center;
-    margin-bottom: 2rem; }
-  section.history .history-wrapper {
-    grid-column-gap: 2rem;
-    height: 100%;
-    display: grid;
-    grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
-    align-items: start;
-    align-content: start; }
-    section.history .history-wrapper .history-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; }
-      section.history .history-wrapper .history-text .signature img {
-        max-width: 200px; }
-    section.history .history-wrapper .history-img {
-      margin: auto 0; }
-      section.history .history-wrapper .history-img img {
-        max-width: 100%; }
-
 .section-container {
   max-width: 1180px;
   width: 80%;
@@ -1247,6 +1188,31 @@ section.history {
 
 .parallax .pimg-2 {
   background-image: url("../img/overflow2.jpg"); }
+
+section.history {
+  width: 80%;
+  margin: 4rem auto;
+  height: 50%; }
+  section.history h2 {
+    text-align: center;
+    margin-bottom: 2rem; }
+  section.history .history-wrapper {
+    grid-column-gap: 2rem;
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
+    align-items: start;
+    align-content: start; }
+    section.history .history-wrapper .history-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      section.history .history-wrapper .history-text .signature img {
+        max-width: 200px; }
+    section.history .history-wrapper .history-img {
+      margin: auto 0; }
+      section.history .history-wrapper .history-img img {
+        max-width: 100%; }
 
 footer .footer-wrapper {
   max-width: 1180px;

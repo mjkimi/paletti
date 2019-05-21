@@ -1,7 +1,6 @@
 $bckgrd-color: #fff;
 $primary-color: #353839;
 $secondary-color: #d3071b;
-// $secondary-color: #343f6e;
 $gray-border-color: #e2e2e2;
 $dark-blue: #343f6e;
 $personalize-bg: #373d4d;
@@ -11,8 +10,6 @@ $cubic-bezier-prlx: cubic-bezier(0.62, 0.28, 0.23, 0.99);
 $letter-spacing: 0.15rem;
 $word-spacing: 0.5rem;
 $border-radius-big: 25px;
-
-// $blue: #1c63bc;
 
 :root {
   --blue: #1c63bc;
@@ -45,20 +42,8 @@ $border-radius-big: 25px;
   }
 }
 
-// @mixin mediaLg {
-//   @media screen and (min-width: 769px) and (max-width: 1170px) {
-//     @content;
-//   }
-// }
-
 @mixin mediaLg {
   @media screen and (min-width: 1171px) {
     @content;
   }
 }
-
-// @mixin mediaXl {
-//   @media screen and (min-width: 1171px) {
-//     @content;
-//   }
-// }

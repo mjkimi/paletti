@@ -91,28 +91,10 @@
     coverImg.nextElementSibling.style.fontSize = imgHeight / 3 + 'px';
   };
 
-  // var width = 0;
-  // function updateWindowSize() {
-  //   if (document.body && document.body.offsetWidth) {
-  //     width = document.body.offsetWidth;
-  //   }
-  //   if (
-  //     document.compatMode == 'CSS1Compat' &&
-  //     document.documentElement &&
-  //     document.documentElement.offsetWidth
-  //   ) {
-  //     width = document.documentElement.offsetWidth;
-  //   }
-  //   if (window.innerWidth) {
-  //     width = window.innerWidth;
-  //   }
-  // }
-
   class Slider {
     runSlider() {
       const singleSlide = document.querySelector('.slide');
       singleSlide.classList.add('current');
-      const picture = document.querySelector('.responsive-image');
       if (autoplay) {
         slideInterval = setInterval(this.nextSlide, intervalTime);
       }
@@ -322,63 +304,19 @@
   }
 
   /* ---------------End--Search----------------- */
-  // const headerDialog = document.querySelector('.header-menu-dialog');
-  // const myP = document.querySelector('.my');
-  // myP.addEventListener('mouseover', addKeep);
-  // myP.addEventListener('mouseleave', removeKeep);
-
-  // function addKeep() {
-  //   headerDialog.classList.add('keep');
-  // }
-  // function removeKeep() {
-  //   headerDialog.classList.remove('keep');
-  // }
-
-  // let activeElement = document.activeElement;
-  // // console.log(activeElement);
-  // if (activeElement.classList.contains('.text-input')) {
-  //   addKeep();
-  //   console.log(123);
-  // } else {
-  //   removeKeep();
-  // }
 
   class Signin {
     setup() {
       const inputs = document.querySelectorAll('.text-input');
-
-      // const headerDialog = document.querySelector('.header-menu-dialog');
-      // const myP = document.querySelector('.my');
-      // window.addEventListener('click', e => {
-      //   if (!headerDialog.contains(e.target)) {
-      //     removeKeep();
-      //     hideDarkOverlay();
-      //   }
-      // });
-      // myP.addEventListener('click', () => {
-      //   addKeep();
-      //   showDarkOverlay();
-      // });
-      // const addKeep = () => {
-      //   headerDialog.classList.add('keep');
-      // };
-      // const removeKeep = () => {
-      //   headerDialog.classList.remove('keep');
-      // };
-      // dark.addEventListener('click', removeKeep);
       // -> Label positioning
       inputs.forEach(input => {
         input.addEventListener('input', () => {
           const value = input.value.trim();
           // if typed:
           if (value) {
-            // headerDialog.style.visibility = 'visible';
-            // addKeep();
             input.dataset.state = 'not-empty';
           } else {
             input.dataset.state = '';
-            // removeKeep();
-            // headerDialog.style.visibility = 'hidden';
           }
         });
       });
@@ -480,12 +418,10 @@
   const closeCartBtn = document.querySelector('.close-cart');
   const clearCartBtn = document.querySelector('.clear-cart');
   const cartDOM = document.querySelector('.cart');
-  // const cartOverlay = document.querySelector('.cart-overlay');
   const cartItems = document.querySelector('.cart-items');
   const cartTotal = document.querySelector('.cart-total');
   const cartContent = document.querySelector('.cart-content');
   const productsDOM = document.querySelector('.products-center');
-  // const btnText = document.querySelector('.btn-text');
 
   let cart = [];
   let buttonsDOM = [];
@@ -638,7 +574,6 @@
       dark.classList.remove('cart-overlay');
 
       cartDOM.classList.remove('showCart');
-      // console.log(cartContent);
     }
 
     // Cart functionality:
@@ -656,7 +591,6 @@
         allCartItems.filter(item => {
           setTimeout(() => {
             item.classList.add('remove');
-            // console.log(this.removeItem(id));
           }, offset);
           offset += 300;
           setTimeout(() => {
@@ -700,15 +634,6 @@
         }
       });
     }
-
-    // clearCart() {
-    //   let cartItems = cart.map(item => item.id);
-    //   cartItems.forEach(id => this.removeItem(id));
-    //   while (cartContent.children.length > 0) {
-    //     cartContent.removeChild(cartContent.children[0]);
-    //   }
-    //
-    // }
 
     removeItem(id) {
       cart = cart.filter(item => item.id !== id);
@@ -758,10 +683,6 @@
     body.classList.remove('modal-opened');
   };
   /*-----------End--Dark overlay--------------*/
-
-  // image src on slider
-  // const firstSlide = document.getElementById('first-slide')
-  // const secondSlide = document.getElementById('second-slide')
 
   document.addEventListener('DOMContentLoaded', () => {
     const scroll = new PageScroll();

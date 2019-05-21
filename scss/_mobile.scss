@@ -1,11 +1,9 @@
-// Desktops & Laptops
 @include mediaLg {
   .slider {
     max-height: calc(100vh - 150px) !important;
   }
 }
 
-// Tablets & Small Laptops (width <768px)
 @include mediaMd {
   .hidden-on-sm {
     display: none;
@@ -81,7 +79,6 @@
   }
 }
 
-// Smartphones (width <500px)
 @include mediaSm {
   h2.headline {
     font-size: 1.7rem;

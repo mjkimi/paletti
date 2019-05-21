@@ -24,7 +24,7 @@
     visibility: visible;
   }
   .signin {
-    opacity: 1 !important;
+    opacity: 1;
     transform: translate3d(0, 0, 0);
     @include easeOut();
   }
