@@ -23,12 +23,30 @@
     }
   }
 
-  /*---------------Page scroll---------------*/
+  /*---------------Loader & Page scroll---------------*/
+
+  const loader = document.querySelector('.loader');
+  const bodyContainer = document.querySelector('.body-container');
 
   const headerWrap = document.querySelector('.header-wrapper');
   let prevScrollPos = window.pageYOffset;
 
   class PageScroll {
+    load() {
+      setTimeout(() => {
+        loader.style.opacity = 0;
+        loader.style.display = 'none';
+        bodyContainer.style.display = 'block';
+        // for fading effect on load:
+        setTimeout(() => {
+          bodyContainer.style.opacity = 1;
+          const slider = new Slider();
+          slider.runSlider();
+          updateSliderSize();
+        }, 50);
+      }, 2500);
+    }
+
     scrollControl() {
       window.onscroll = () => {
         // -> show-hide sticky header
@@ -76,14 +94,18 @@
   /*---------------Slider-------------------*/
   const slider = document.querySelector('.slider');
   const slides = document.querySelectorAll('.slide');
-  let picture = document.querySelector('.responsive-image');
   let autoplay = true;
   let intervalTime = 5000;
   let slideInterval;
-  window.onresize = () => updateSliderSize();
+  window.onresize = () =>
+    setTimeout(() => {
+      updateSliderSize();
+    }, 300);
 
   // set the height of  slider to the height of absolute slide:
   const updateSliderSize = () => {
+    let picture = document.querySelector('.responsive-image');
+
     slider.style.height = picture.offsetHeight - 15 + 'px';
     //  font-size <span> of personalize section
     const coverImg = document.querySelector('#cover-img');
@@ -208,6 +230,7 @@
   const searchRes = document.querySelector('#search-result');
   const searchBlock = document.querySelector('.search-block');
   const closeSearchBtn = document.querySelector('#search-close');
+
   let products;
   let matches;
 
@@ -223,22 +246,9 @@
       searchHeader.classList.remove('header-search-closed');
       closeSearchBtn.classList.add('activated');
       showDarkOverlay();
-      searchHeader.ontransitionend = () => {
-        this.closeSearch();
-      };
+      closeSearchBtn.addEventListener('click', () => this.hideSearchForm());
+      dark.addEventListener('click', () => this.hideSearchForm());
       this.showInput();
-    }
-
-    closeSearch() {
-      const that = this;
-      document.addEventListener('mouseup', function handler(e) {
-        let targetElement = e.target; // clicked element
-        if (!searchBlock.contains(targetElement)) {
-          that.hideSearchForm();
-          // remove document event listener from influencing other parts
-          document.removeEventListener('mouseup', handler);
-        }
-      });
     }
 
     showInput() {
@@ -686,7 +696,6 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const scroll = new PageScroll();
-    const slider = new Slider();
     const search = new Search();
     const personalize = new Personolize();
     const ui = new UI();
@@ -702,15 +711,14 @@
         ui.displayProducts(products);
         Storage.saveProducts(products);
         search.setup(products);
-        updateSliderSize();
+        // updateSliderSize();
       })
       .then(() => {
         ui.getProductButtons();
         cart.cartLogic();
       });
-
+    scroll.load();
     scroll.scrollControl();
-    slider.runSlider();
     cart.setup();
     personalize.setupListeners();
     menu.setupMenuEvents();
