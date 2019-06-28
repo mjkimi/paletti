@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  >
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <title>Paletti Chocolate Store | New Arrivals Now Online</title>
+  </head>
+  <body>    
+    <div class="body-container">
+    <header class="page-header">
+      <div class="header-wrapper">
+        <!-- Search // -->
+        <div class="header-search header-search-closed ">
+          <div class="white-bg">
+            <div class="search-block">
+              <form method="get">
+                <input type="text" id="search-field" class="input-text" placeholder="Search for products..." >
+                <label for="search-field">&#42;enter name or color</label>
+                <div class="search-icon">
+                  <i class="fas fa-search"></i>
+                </div>
+              </form>
+            </div>
+          </div>          
+          <div id="search-result">
+            <!--Search results are inserted here-->
+          </div> 
+        </div>
+        <!-- // Search -->
+        <!-- Sticky menu // -->
+        <div class="header-sticky">
+          <div class="column">
+            <button class="btn main-menu-btn" id="main-menu-btn" type="button">
+              <span class="hamburger-menu">&#9776;</span>
+              <span class="text hidden-on-sm">Menu</span>
+            </button>
+            <a href="#" class="logo" title="Paletti">
+              <img src="./img/main/logo.png" alt="Paletti logo" />
+            </a>
+            <div class="header-menu-right">
+              <ul>
+                <li class="header-menu-item">
+                  <button
+                    id="search-btn"
+                    class="btn header-menu-btn"
+                    type="button"
+                  >
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                  </button>
+                </li>
+                
+                <li class="header-menu-item my">
+                  <a href="#" class="btn">
+                    <span class="hidden-on-sm">My <span class="typo">P</span> </span>
+                  </a>
+                    <!-- Sign in form -->
+                    <div class="header-menu-dialog">
+                      <div class="header-authentication">
+                        <div class="signin">
+                          <form id="sign-in-form">
+                            <h3>I have an account</h3>
+                            <div class="email-field">
+                              <input type="email" id="email" class="text-input empty" data-validate="{required:true, 'validate-email':true}" autocomplete="off"/>
+                              <label for="email" class="placeholder"> Email <span  class="aster">*</span></label>
+                            </div>
+                            <div class="password-field">
+                              <input type="password" id="password" class="text-input empty" data-validate="{required:true}" autocomplete="off"/>
+                              <label for="password" class="placeholder"> Password <span class="aster">*</span></label>
+                              <div class="error-msg" id="error-msg"></div>
+                            </div>
+                            <div class="link">
+                              <a href="#">Forgot Your Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-action buy-now login red-theme"><span>Login</span></button>
+                          </form>
+                          <div class="or">
+                            <hr class="bar" />
+                            <span>OR</span>
+                            <hr class="bar" />
+                          </div>
+                          <p>To benefit from our exclusive services and keep up to date with our latest publications <span>&#10150;</span></p>
+                          <button type="button" class="btn btn-action buy-now "><span>Sign up</span></button>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+
+                <li class="header-menu-item">
+                  <div class="cart-btn">
+                    <span class="nav-icon">
+                      <i class="fas fa-shopping-bag fa-lg"></i>
+                    </span>
+                    <div class="cart-items">0</div>
+                  </div>
+                </li>
+              </ul>
+              <button class="btn btn-close" id="search-close">
+                <span class="btn-close-x search-x"><span></span></span>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- // Sticky menu -->
+        <!-- Main menu -->
+        <div class="side-menu">
+          <button class="btn btn-close" id="btn-close">
+            <span class="btn-close-x"><span></span></span>
+            Close
+          </button>
+          <nav class="menu">
+            <ul class="menu-nav">
+              <li class="nav-item"> 
+                <a href="#main" class="nav-link">
+                  <i class="fas fa-palette fa-lg menu-icons"></i> 
+                    Main
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#shop" class="nav-link">
+                  <i class="fab fa-servicestack fa-lg menu-icons"></i>
+                  Shop Exclusives
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#packaging" class="nav-link">
+                  <i class="fas fa-box-open fa-lg menu-icons"></i> 
+                  Packaging & Delivery
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#personalize" class="nav-link">
+                  <i class="far fa-newspaper fa-lg menu-icons"></i>
+                  Chocolate letter
+                </a>
+              </li>
+              <li class="nav-item">
+                  <a href="#history" class="nav-link">
+                    <i class="fab fa-pied-piper-hat fa-lg menu-icons"></i>
+                    Our history
+                  </a>
+                </li>
+            </ul>
+          </nav>
+        </div>
+        
+        <div class="dark-overlay">
+          <!-- Dark overlay -->
+        </div>
+
+      </div>
+    </header>
+    <main>
+      <!-- Slider // -->
+      <section id="main" class="section">
+        <div class="slider-wrapper">
+          <div class="slider">
+            <div class="slide ">
+              <picture class="responsive-image">
+                <source media="(min-width: 1171px)" srcset="./img/main/Chocolate.jpg">
+                <source media="(min-width: 550px)" srcset="./img/mobile/Chocolate_medium.jpg">
+                <source media="(min-width: 1px)" srcset="./img/mobile/Chocolate_small.jpg">
+                <img src="./img/main/Chocolate.jpg" alt="Chocolate pieces"  class="main-slide  responsive-image" id="first-slide">
+              </picture>
+              <div class="side-module color-module">
+                <img src="./img/main/Paletti.png" alt="Three tastes of Paletti">
+                <h3>Shop Paletti products</h3>
+                <a href="#shop">
+                  <button type="button" class="btn btn-action buy-now"><span>Buy now</span></button>
+                </a>
+              </div>
+            </div>
+
+            <div class="slide">
+              <picture class="responsive-image">
+                <source media="(min-width: 1171px)" srcset="./img/main/Personal_chocolate.jpg">
+                <source media="(min-width: 550px)" srcset="./img/mobile/Personal_chocolate_medium.jpg">
+                <source media="(min-width: 1px)" srcset="./img/mobile/Personal_chocolate_small.jpg">
+                <img src="./img/main/Personal_chocolate.jpg" alt="Chocolate letter" class="main-slide  responsive-image" id="second-slide">
+              </picture>
+              <div class="side-module light-module">
+                <h4>Design your own</h4>
+                <p>Chocolate letter</p>
+                <a href="#personalize">
+                  <button type="button" class="btn btn-action buy-now light-theme"><span>Say it with chocolate</span>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div> 
+            <!--Slider control buttons -->
+            <div class="slider-control">
+              <button class="arrow" id="control" type="button"><i class="far fa-pause-circle"></i></button>
+              <button class="arrow" id="prev" type="button"><i class="fas fa-angle-double-left"></i></button>
+              <button class="arrow" id="next" type="button"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+            <div class="skew-bg"></div>
+        </div>
+        <a href="#shop" class="arrow section-scroll">
+          <i class="fas fa-angle-double-down"></i>
+        </a>
+      </section>
+      <!-- // Slider -->
+      <!-- Products //-->
+      <section id="shop" class="section">
+        <div class="module-wrapper"> 
+          <div class="shop-title">
+            <h2  class="headline">Our chocolate collection</h2>
+            <p class="large">Every chocoholic's dream gift - the ultimate collection of Paletti chocolate in every flavor. <span> Buy chocolate. Eat chocolate. Be happy.</span> </p>
+          </div>
+        </div> 
+        <div class="showcase-wrapeer">
+          <div class="products-center">
+            <!--Products to buy are inserted here from JSON -->
+          </div>
+        </div>
+         <!-- Info, Packaging & Delivery// -->
+        <div class="section" id="grid">
+          <div class="section-container">
+            <div class="for-customers">                  
+              <div class="description from-center">
+                <h2  class="headline">First-rate quality</h2>
+                <p class="large">Sustainable cocoa production is vital for the future of manufacturing chocolate. 100 % of the cocoa we use comes from responsible sources. </p> <p>For some products, we also use selected raw materials from organic farming for the production.</p>
+              </div>
+              <div class="from-center">
+                <img src="./img/main/cacao.jpg" alt="Cocoa ">
+              </div>
+              <div class="from-center ">
+                <img src="./img/main/delivery.jpg" alt="Original packaging">
+              </div>
+              <div class="description from-center" id="packaging">
+                <h2  class="headline">Original packaging</h2>
+                <p class="large">For those who orders full palette of our tastes, chocolate bars will be packaged in a special designed little box for  satisfying your most demanding gift requirements.</p>
+              </div>
+              <div class="description from-center">
+                <h2  class="headline">Express Next Day Delivery</h2>
+                <p class="large">Your parcel will be delivered within 1–2 working days of it leaving the Paletti warehouse. Once your parcel is packed and ready to leave our warehouse, you will receive a shipping confirmation email with a link to your shipment status. You can track your shipment online anytime.</p>
+              </div>
+              <div class="from-center">
+                <img src="./img/main/balloon.jpg" alt="Delivery">
+              </div>                
+            </div>
+          </div>
+        </div>       
+      <!-- //Info, Packaging & Delivery -->
+        <!-- Parallax -->
+        <div class="parallax">          
+          <div class="pimg-1"></div>            
+          <div class="pimg-2"></div>
+        </div>
+        <!-- Cart// -->
+        <div class="cart-overlay">
+          <div class="cart">
+            <button class="btn btn-close close-cart" id="btn-close" >
+              <span class="btn-close-x cart-x"><span></span></span>
+              Continue shopping
+            </button>
+            <h2>Items in cart</h2>
+            <div class="cart-content">
+              <!--Every single cart item is here// -->
+            </div>
+            <div class="cart-footer">
+              <h3>Total</h3>
+              <span class="cart-total">0</span>
+              <button class="btn clear-cart clear">Clear cart</button>
+              <button class="btn btn-action checkout dark-theme" >
+              <span> Checkout</span></button>
+            </div>
+          </div>
+        </div>
+        <!-- //cart -->
+      </section>
+      <!-- // Products -->
+     
+      <section class="personalize" id="personalize">
+        <div class="design-grid" id="personal">
+          <div class="mockup">
+            <div class="column-wrapper">
+              <div class="mckp-wrap">
+                <img src="./img/main/mockup4.png" alt="Cover image" id="cover-img">
+                <span id="your-message">Your Message</span>
+              </div>
+            </div>
+          </div>
+          <div class="column-wrapper">
+            <div class="message">
+              <h2>Design Your Chocolate</h2>
+              <div class="input-wrapper">
+                <input id="design-input" type="text" maxlength="15" required autocomplete="off">
+                <label for="design-input" class="input-label">Your Message <span class="required">&#42;</span></label>
+                <h4><span class="required">&#42;</span> <span id="prompt"> maximum 19 characters</span></h4>
+              </div>
+              <button type="button" class="btn btn-action buy-now light-theme" id="next-form"><span>Next</span></button>
+            </div>
+
+            <div class="send-to" >
+              <form id="receiver">
+                <h2>Send Chocolate to...</h2>
+                <h4>Fill in receiver's shipping address.</h4>
+                <div class="input-wrapper">
+                  <input id="name" type="text" maxlength="50" required autocomplete="off">                  
+                  <label for="name" class="input-label">Full Name <span class="required">&#42;</span></label>
+                </div>
+                <div class="input-wrapper">
+                  <input id="address" type="text" maxlength="150" required autocomplete="off">
+                  <label for="address" class="input-label">Address <span class="required">&#42;</span></label>
+                </div>
+                <div class="row">
+                  <div class="input-wrapper half">
+                    <input id="zip-code" type="text" maxlength="8" required autocomplete="off">
+                    <label for="zip-code" class="input-label">Zip code <span class="required">&#42;</span></label>
+                  </div>
+                  <div class="input-wrapper half">
+                    <input id="city" type="text" maxlength="20" required autocomplete="off">
+                    <label for="city" class="input-label">City <span class="required">&#42;</span></label>
+                  </div>
+                </div>
+                <div class="input-wrapper countries">
+                  <label for="select">
+                    <select id="select-country" name="select" required >
+                      <option value="" selected="">Select country</option>
+                    </select>
+                  </label>
+                  <span class="required select-span">&#42;</span>
+                </div>
+                <h4 class="required"><span class="required">&#42;</span> this is required field</h4>
+                <div class="row">
+                  <button id="previous" type="button" class="btn back"" ><span>Back</span></button>
+                  <button id="add-to-cart" type="button" class="btn btn-action buy-now light-theme bag-btn" data-id="personal"><span>Add to cart</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- history //-->
+      <section id="history" class="section history">
+        <h2 class="headline">History is our tradition</h2>
+        <div class="history-wrapper">
+          <div class="history-text from-center">
+            <p>A love of fine chocolate has been inherent to us for nearly 100 years. For already three generations we have devoted ourselves to the chocolate and trade, to the fabrication of the finest tastes. Today, we are delivering our fine chocolate worldwide.</p>
+
+            <p>Yet, we never forget our roots. To be actively and wholeheartedly involved, to honor the old and, at the same time, dare to try the new – is our conviction and characterizes us as a family business. And I can give you my personal word of honor on this.</p>
+            <div class="signature">
+              <img src="./img/main/Signature.png" alt="Signature">
+            </div>
+            <p>Frank Paletti</p>
+          </div>
+            <div class="history-img from-center">
+              <img src="./img/main/Old_building.jpg" alt="Our factory">
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-cols">
+          <ul>
+            <li>Customer service</li>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+            <li>
+              <a href="#">Ordering & Payments</a>
+            </li>
+            <li>
+              <a href="#">Shipping & Tracking</a>
+            </li>
+            <li>
+              <a href="#">Returns</a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>Good to know</li>
+            <li>
+              <a href="#">Find a Store</a>
+            </li>
+            <li>
+              <a href="#">Terms & Conditions</a>
+            </li>
+            <li>
+              <a href="#">Terms and Conditions of Use of Paletti Web Services</a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>Secure Payment</li>
+            <li>
+              <a href="#">Credit Card</a>
+            </li>
+            <li>
+              <a href="#">Paypal</a>
+            </li>
+            <li>
+              <a href="#">Guarantee</a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>About Paletti</li>
+            <li>
+              <a href="#">Newsroom</a>
+            </li>
+            <li>
+              <a href="#">History</a>
+            </li>
+            <li>
+              <a href="#">Press</a>
+            </li>
+            <li>
+              <a href="#">Events</a>
+            </li>
+          </ul>          
+        </div>
+        <button type="button" class="btn btn-action buy-now"><span>Contact us</span></button>
+      </div>
+      <div class="footer-bottom">
+        Copyright &copy; 2019 Paletti. All rights reserved.
+      </div>
+    </footer>
+    </div>
+    <div class="loader">
+      <div class="for-spinner">
+        <img src="./img/main/spinner.gif" alt="Loading">
+        <div class="p-spinner"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
