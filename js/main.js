@@ -9,7 +9,7 @@
         const products = await res.json();
         return products;
       } catch (err) {
-        console.log('JSON Error: ' + err.message);
+        console.error('JSON Error(products): ' + err.message);
       }
     }
   }
@@ -17,9 +17,13 @@
   /* ---------Countries(for personalized section)------------ */
   class Countries {
     async fetchCountries() {
-      const res = await fetch('./data/countries.json');
-      const countriesList = await res.json();
-      return countriesList;
+      try {
+        const res = await fetch('./data/countries.json');
+        const countriesList = await res.json();
+        return countriesList;
+      } catch (err) {
+        console.error('JSON Error(countries): ' + err.message);
+      }
     }
   }
 
@@ -240,6 +244,10 @@
       searchBtn.addEventListener('click', () => this.showSearchForm());
       input.addEventListener('input', () => this.searchProducts(input.value));
       products = items;
+      searchRes.addEventListener('click', () => {
+        hideDarkOverlay();
+        setTimeout(() => this.hideSearchForm(), 500);
+      });
     }
 
     showSearchForm() {
@@ -298,7 +306,7 @@
             // for <i> style picking only 1st word in color data
             match => `
           <div class="matched">
-            <a href="#${match.id}">
+            <a href="#${match.id}" >
               <i class="fas fa-tint fa-xs" 
                 style="color:var(--${match.color.split(',')[0]})"></i> ${
               match.title
